@@ -36,6 +36,16 @@ button:hover{
     animation: none;
 }
 
+.BigText{
+    color: white;
+    font-size: large;
+    width: 80%;
+    margin: 0 auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap:break-word ;
+}
+
 .Special{
     color: white;
     text-shadow:0 0 15px orange;
