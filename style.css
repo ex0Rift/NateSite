@@ -22,6 +22,9 @@ button{
     font-size: 16px;
     border-radius: 20px;
     cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     box-shadow: 0 0 15px darkmagenta;
     transition: all 0.9s ease;
     animation: pulseglow 1.5s infinite;
@@ -31,6 +34,18 @@ button:hover{
     background-color: darkgoldenrod;
     box-shadow: 0 0 25px blueviolet;
     animation: none;
+}
+
+.Special{
+    color: white;
+    text-shadow:0 0 15px orange;
+    animation: FunText 1s infinite ease-in-out ;
+}
+
+.images{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .hidden{
@@ -44,6 +59,27 @@ button:hover{
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+@keyframes wave {
+    0%,100% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes FunText {
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulseglow {
