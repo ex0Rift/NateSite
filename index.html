@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Veiwport" content="width=device-width, initial-scale=1.0">
+    <title>My first site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="MainText">Hello World!</h1>
+    <p>This is my first website!</p>
+    <button onclick="SecretHide()">Click me!</button> 
+    <p id="Secret" class="hidden">Ewan stinky!</p>
+
+    <script>
+        let toggled = false;
+        let secretVisable = false;
+        function changeText(){
+            const heading = document.getElementById("MainText");
+            
+            if (toggled){
+                heading.textContent = "Welcome!";
+            } else {
+                heading.textContent = "You pressed";
+            }
+            
+            toggled = !toggled;
+        }
+        
+        function SecretHide(){
+            const secret = document.getElementById("Secret");
+            secret.classList.toggle("visible");
+            secret.classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+</html>
