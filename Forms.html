@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Input Forms</h1>
+    <a href="index.html">
+        <button>Go home</button>
+    </a>
+    
+    <h2 id="Output" , class="hidden">Placeholder</h2>
+
+    <form action="/submit" onsubmit="captureInputValue(event)">
+        <input type="text" id="name" name="name" placeholder="Your name">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <script>
+        function captureInputValue(event){
+            const Output = document.getElementById("Output")
+            event.preventDefault()
+            
+            var inputValue = document.getElementById('name').value;
+            Output.classList.toggle("visible")
+            Output.classList.toggle("hidden")
+            Output.textContent = inputValue;
+        }
+    </script>
+    
+</body>
+</html>
