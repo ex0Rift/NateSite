@@ -38,7 +38,7 @@
         function updateDisplay(){
             const ClickerCounter = document.getElementById("ClickCounter")
             const Display = document.getElementById("Display")
-            Display.textContent = Increment + "x per click | " + autoMultiplier + "x per second"
+            Display.textContent = Increment + "x per click | " + autoMultiplier.toLocaleString() + "x per second"
             ClickerCounter.textContent="Clicks:"+count;
         }
         
