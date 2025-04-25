@@ -10,7 +10,7 @@
         <button class="MainButton">Go home</button>
     </a>
     <h1 id="ClickCounter">Clicks: </h1>
-    <p id="Display">1x per click | 0x per second</p>
+    <p id="Display">1x per click | 0x per 10s</p>
 
     <div>
         <button class="Main" onclick="increment()">Click!</button>
@@ -19,6 +19,7 @@
     <div>
         <button id="Extra" disabled onclick="multiplier()">Extra click - 10</button>
         <button id="Auto" disabled onclick="AutoAdd()">Extra AutoClick - 50</button>
+        <button id="Speed" disabled onclick="HalfAuto()">half AutoClick speed - 100</button>
     </div>
     
     <script>
@@ -27,18 +28,23 @@
         var ClickCost=10;
         var AutoCost = 50;
         var autoMultiplier = 0;
+        var AutoSpeed=10000;
+        var SpeedCost=100;
         
-        setInterval(()=>{
+        var intervalId = setInterval(tick,AutoSpeed)
+        
+        function tick(){
             count+=autoMultiplier;
             updateDisplay()
             disabling()
             enabling()
-        },1000);
+        }
+        
         
         function updateDisplay(){
             const ClickerCounter = document.getElementById("ClickCounter")
             const Display = document.getElementById("Display")
-            Display.textContent = Increment + "x per click | " + autoMultiplier + "x per second"
+            Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + AutoSpeed/1000 + "s"
             ClickerCounter.textContent="Clicks:"+count.toLocaleString();
         }
         
@@ -49,6 +55,9 @@
             if (count<AutoCost){
                 document.getElementById("Auto").disabled = true;
             }
+            if (count<SpeedCost){
+                document.getElementById("Speed").disabled = true;
+            }
         }
         function enabling(){
             if (count>=ClickCost){
@@ -56,6 +65,9 @@
             }
             if (count>=AutoCost){
                 document.getElementById("Auto").disabled = false;
+            }
+            if (count>=SpeedCost){
+                document.getElementById("Speed").disabled = false;
             }
             
         }
@@ -82,6 +94,18 @@
             updateDisplay()
             disabling()
         }
+        
+        function HalfAuto(){
+            count-=SpeedCost;
+            SpeedCost+=100;
+            AutoSpeed = AutoSpeed/2;
+            document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
+            clearInterval(intervalId)
+            intervalId=setInterval(tick,AutoSpeed)
+            updateDisplay()
+            disabling()
+        }
+        
     </script>
 
 </body>
