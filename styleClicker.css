@@ -1,0 +1,103 @@
+﻿
+html, body{
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+}
+
+
+body{
+    background-color: cadetblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1{
+    padding: 10px;
+    color: white;
+}
+
+p{
+    margin-bottom: 40px;
+    color: white;
+}
+
+button{
+    background-color: darkmagenta;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    transition: all 0.5s ease-out;
+}
+
+button:hover{
+    background-color: blueviolet;
+}
+
+button:disabled{
+    background-color: gray;
+}
+
+button:active:not(:disabled){
+    background-color: orange;
+    box-shadow: 0 0 15px orange;
+}
+
+.Main{
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    font-size: 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px chartreuse;
+    transition: all 0.5s ease;
+    margin-bottom: 30px;
+}
+
+.Main:hover{
+    background-color: darkolivegreen;
+    box-shadow: 0 0 30px chartreuse;
+}
+
+.hidden{
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.visible{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.MainButton{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 0 0 15px darkmagenta;
+    transition: all 0.9s ease;
+}
+
+@keyframes glow {
+    0%{
+        box-shadow: 0 0 15px orange;
+    }
+    50%{
+        box-shadow: 0 0 30px orange;
+    }
+    100%{
+        box-shadow: 0 0 60px orange;
+    }
+}

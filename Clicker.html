@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker</title>
+    <link rel="stylesheet" href="styleClicker.css">
+</head>
+<body>
+    <a href="index.html">
+        <button class="MainButton">Go home</button>
+    </a>
+    <h1 id="ClickCounter">Clicks: </h1>
+    <p id="Display">1x per click | 0x per second</p>
+
+    <div>
+        <button class="Main" onclick="increment()">Click!</button>
+    </div>  
+    
+    <div>
+        <button id="Extra" disabled onclick="multiplier()">Extra click - 10</button>
+        <button id="Auto" disabled onclick="AutoAdd()">Extra AutoClick - 50</button>
+    </div>
+    
+    <script>
+        var count=0;
+        var Increment=1;
+        var ClickCost=10;
+        var AutoCost = 50;
+        var autoMultiplier = 0;
+        
+        setInterval(()=>{
+            count+=autoMultiplier;
+            updateDisplay()
+            disabling()
+            enabling()
+        },1000);
+        
+        function updateDisplay(){
+            const ClickerCounter = document.getElementById("ClickCounter")
+            const Display = document.getElementById("Display")
+            Display.textContent = Increment + "x per click | " + autoMultiplier + "x per second"
+            ClickerCounter.textContent="Clicks:"+count;
+        }
+        
+        function disabling(){
+            if (count<ClickCost){
+                document.getElementById("Extra").disabled = true;
+            }
+            if (count<AutoCost){
+                document.getElementById("Auto").disabled = true;
+            }
+        }
+        function enabling(){
+            if (count>=ClickCost){
+                document.getElementById("Extra").disabled = false;
+            }
+            if (count>=AutoCost){
+                document.getElementById("Auto").disabled = false;
+            }
+            
+        }
+        function increment(){
+            count+=Increment;
+            updateDisplay()
+            disabling()
+            enabling()
+        }
+        function multiplier(){
+            count -=ClickCost;
+            Increment+=1;
+            ClickCost+=10;
+            document.getElementById("Extra").textContent="Extra Click - " + ClickCost;
+            updateDisplay()
+            disabling()
+        }
+        
+        function AutoAdd(){
+            count-=AutoCost;
+            autoMultiplier+=1;
+            AutoCost+=50;
+            document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
+            updateDisplay()
+            disabling()
+        }
+    </script>
+
+</body>
+</html>
