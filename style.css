@@ -59,6 +59,17 @@ button{
     animation: pulseglow 1.5s infinite;
 }
 
+input{
+    border-color: blueviolet;
+    background-color: blueviolet;
+    color: white;
+    box-sizing: border-box;
+}
+
+input:hover{
+    border-color: brown;
+}
+
 button:hover{
     background-color: darkgoldenrod;
     box-shadow: 0 0 25px blueviolet;
