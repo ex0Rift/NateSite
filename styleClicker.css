@@ -80,6 +80,23 @@ button:disabled{
     transition: all 0.9s ease;
 }
 
+h2{
+    color: white;
+    margin-bottom: 0;
+}
+
+.Rebirth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Rebirth button{
+    height: 80px;
+}
+
+
 @keyframes shake{
     0%{transform: rotate(0deg);}
     25%{transform: rotate(10deg);}

@@ -9,7 +9,7 @@
     <a href="index.html">
         <button class="MainButton">Go home</button>
     </a>
-    <h1 id="ClickCounter">Clicks: </h1>
+    <h1 id="ClickCounter">Clicks:0</h1>
     <p id="Display">1x per click | 0x per 10s</p>
 
     <div>
@@ -22,6 +22,14 @@
         <button id="Speed" disabled onclick="HalfAuto()">half AutoClick speed - 100</button>
     </div>
     
+    <div class="Rebirth">
+        <div>
+            <h2>Rebirth: 0</h2>
+            <p>cost:2,000,000</p>
+        </div>
+        <button id="Rebirth" disabled>Coming Soon</button>
+    </div>
+    
     <script>
         var count=0;
         var Increment=1;
@@ -30,6 +38,7 @@
         var autoMultiplier = 0;
         var AutoSpeed=10000;
         var SpeedCost=100;
+        var RebirthCost=2000000;
         
         var intervalId = setInterval(tick,AutoSpeed)
         
@@ -58,6 +67,9 @@
             if (count<SpeedCost){
                 document.getElementById("Speed").disabled = true;
             }
+            if (count<RebirthCost){
+                document.getElementById("Rebirth").disabled = true;
+            }
         }
         function enabling(){
             if (count>=ClickCost){
@@ -68,6 +80,9 @@
             }
             if (count>=SpeedCost){
                 document.getElementById("Speed").disabled = false;
+            }
+            if (count>=RebirthCost){
+                document.getElementById("Rebirth").disabled = false;
             }
             
         }
