@@ -30,6 +30,8 @@
         <button id="Rebirth" disabled>Coming Soon</button>
     </div>
     
+    <button onclick="ClearData()">DEBUG: Clear save data</button>
+    
     <script>
         var count=0;
         var Increment=1;
@@ -133,7 +135,12 @@
             localStorage.setItem('Count',count);
         }
         function LoadData(){
-            count = localStorage.getItem('Count');
+            var Scount = localStorage.getItem('Count');
+            count = Number(Scount)
+        }
+        
+        function ClearData(){
+            localStorage.clear();
         }
         
         window.onload = LoadData
