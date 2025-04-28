@@ -40,6 +40,7 @@
         var SpeedCost=100;
         var RebirthCost=2000000;
         
+        
         var intervalId = setInterval(tick,AutoSpeed)
         
         function tick(){
@@ -120,7 +121,22 @@
             updateDisplay()
             disabling()
         }
+
+        //Data handling
+
+        setInterval(function(){
+            saveData()
+            
+        },10000);
         
+        function saveData(){
+            localStorage.setItem('Count',count);
+        }
+        function LoadData(){
+            count = localStorage.getItem('Count');
+        }
+        
+        window.onload = LoadData
     </script>
 
 </body>
