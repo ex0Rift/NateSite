@@ -32,41 +32,31 @@ button{
     transition: all 0.5s ease-out;
 }
 
-button:hover{
-    background-color: blueviolet;
-}
-
 button:disabled{
     background-color: gray;
 }
 
-button:active:not(:disabled){
-    background-color: orange;
-    box-shadow: 0 0 15px orange;
-}
-
 .Main{
-    background-color: green;
+    background: transparent;
+    background-image: url("images/button.png");
     border: none;
-    color: white;
-    padding: 10px 30px;
+    padding: 110px 110px;
     font-size: 30px;
     border-radius: 30px;
-    box-shadow: 0 0 15px chartreuse;
     transition: all 0.5s ease;
     margin-bottom: 30px;
 }
 
-.Main:hover{
-    background-color: darkolivegreen;
-    box-shadow: 0 0 30px chartreuse;
+.Main:active{
+    animation: shake 0.5s ease-in-out;
 }
+
 
 .hidden{
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
 }
 
 .visible{
@@ -89,6 +79,16 @@ button:active:not(:disabled){
     box-shadow: 0 0 15px darkmagenta;
     transition: all 0.9s ease;
 }
+
+@keyframes shake{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(10deg);}
+    50%{transform:rotate(0deg);}
+    75%{transform: rotate(-10deg);}
+    100%{transform: rotate(0deg);}
+        
+}
+
 
 @keyframes glow {
     0%{

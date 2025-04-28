@@ -71,7 +71,7 @@ input:hover{
 }
 
 button:hover{
-    background-color: darkgoldenrod;
+    background-color: darkorchid;
     box-shadow: 0 0 25px blueviolet;
     animation: none;
 }
