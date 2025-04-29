@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="styleClicker.css">
 </head>
 <body>
+
+    <img id="saver" class="Left" src="images/button.png">
+
     <a href="index.html">
         <button class="MainButton" onclick="saveData()">Go home</button>
     </a>
@@ -30,7 +33,9 @@
         <button id="Rebirth" disabled>Coming Soon</button>
     </div>
     
-    <button onclick="ClearData()" class="hidden">DEBUG: Clear save data</button>
+    <footer>
+        <a href="#" onclick="ClearData()">Clear save</a>
+    </footer>
     
     <script>
         var count=0;
@@ -130,6 +135,11 @@
         //Data handling
 
         setInterval(function(){
+            const show = document.getElementById("saver");
+            show.style.display ="block";
+            setTimeout(() => {
+                show.style.display = "none";
+            },1000);
             saveData()
         },10000);
         
@@ -156,7 +166,14 @@
         }
         
         function ClearData(){
-            count = 0;
+            count=0;
+            Increment=1;
+            ClickCost=10;
+            AutoCost = 50;
+            autoMultiplier = 0;
+            AutoSpeed=10000;
+            SpeedCost=100;
+            RebirthCost=2000000;
             localStorage.clear();
             updateDisplay()
         }
