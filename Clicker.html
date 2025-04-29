@@ -56,6 +56,7 @@
         var intervalId = setInterval(tick,AutoSpeed)
         
         function tick(){
+            navigator.vibrate(200);
             count+=autoMultiplier;
             updateDisplay()
             disabling()
