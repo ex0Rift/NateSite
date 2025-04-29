@@ -7,7 +7,7 @@
 </head>
 <body>
     <a href="index.html">
-        <button class="MainButton">Go home</button>
+        <button class="MainButton" onclick="saveData()">Go home</button>
     </a>
     <h1 id="ClickCounter">Clicks:0</h1>
     <p id="Display">1x per click | 0x per 10s</p>
@@ -30,7 +30,7 @@
         <button id="Rebirth" disabled>Coming Soon</button>
     </div>
     
-    <button onclick="ClearData()">DEBUG: Clear save data</button>
+    <button onclick="ClearData()" class="hidden">DEBUG: Clear save data</button>
     
     <script>
         var count=0;
@@ -58,6 +58,9 @@
             const Display = document.getElementById("Display")
             Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + AutoSpeed/1000 + "s"
             ClickerCounter.textContent="Clicks:"+count.toLocaleString();
+            document.getElementById("Extra").textContent="Extra Click - " + ClickCost;
+            document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
+            document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
         }
         
         function disabling(){
@@ -128,21 +131,41 @@
 
         setInterval(function(){
             saveData()
-            
         },10000);
         
         function saveData(){
             localStorage.setItem('Count',count);
+            localStorage.setItem('Increment',Increment);
+            localStorage.setItem('ClickCost',ClickCost);
+            localStorage.setItem('AutoCost',AutoCost);
+            localStorage.setItem('autoMultiplier',autoMultiplier);
+            localStorage.setItem('AutoSpeed',AutoSpeed);
+            localStorage.setItem('SpeedCost',SpeedCost);
+            localStorage.setItem('RebirthCost',RebirthCost);
         }
         function LoadData(){
-            var Scount = localStorage.getItem('Count');
-            count = Number(Scount)
+            count = parseInt(localStorage.getItem('Count'));
+            Increment = parseInt(localStorage.getItem('Increment'));
+            ClickCost = parseInt(localStorage.getItem('ClickCost'));
+            AutoCost = parseInt(localStorage.getItem('AutoCost'));
+            autoMultiplier = parseInt(localStorage.getItem('autoMultiplier'));
+            AutoSpeed = parseInt(localStorage.getItem('AutoSpeed'));
+            SpeedCost = parseInt(localStorage.getItem('SpeedCost'));
+            RebirthCost = parseInt(localStorage.getItem('RebirthCost'));
+            updateDisplay()
         }
         
         function ClearData(){
+            count = 0;
             localStorage.clear();
+            updateDisplay()
         }
         
+        
+        let value = localStorage.getItem('AutoCost')
+        if (!value){
+            saveData()
+        }
         window.onload = LoadData
     </script>
 
