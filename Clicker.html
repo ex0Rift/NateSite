@@ -29,7 +29,7 @@
     
     <div class="Rebirth">
         <div>
-            <h2>Rebirth: 0</h2>
+            <h2 id="RebirthNum">Rebirth: 0</h2>
             <p>cost:2,000,000</p>
         </div>
         <button id="Rebirth" disabled>Coming Soon</button>
@@ -52,6 +52,7 @@
         var AutoSpeed=10000;
         var SpeedCost=100;
         var RebirthCost=2000000;
+        var Rebirth=0;
         
         var vibrateToggle = true;
         
@@ -71,11 +72,18 @@
         function updateDisplay(){
             const ClickerCounter = document.getElementById("ClickCounter")
             const Display = document.getElementById("Display")
-            Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + AutoSpeed/1000 + "s"
+            Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + AutoSpeed/1000 + "s";
             ClickerCounter.textContent="Clicks:"+count.toLocaleString();
             document.getElementById("Extra").textContent="Extra Click - " + ClickCost;
             document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
+            document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth;
+            
+            if (SpeedCost>=102400)
+            {
+                document.getElementById("Speed").textContent="MAX";
+                Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + "Infinite";
+            }
         }
         
         function disabling(){
@@ -100,7 +108,9 @@
                 document.getElementById("Auto").disabled = false;
             }
             if (count>=SpeedCost){
-                document.getElementById("Speed").disabled = false;
+                if (SpeedCost<=102400){
+                    document.getElementById("Speed").disabled = false;
+                }
             }
             if (count>=RebirthCost){
                 document.getElementById("Rebirth").disabled = false;
@@ -136,7 +146,7 @@
         
         function HalfAuto(){
             count-=SpeedCost;
-            SpeedCost+=100;
+            SpeedCost = SpeedCost*2;
             AutoSpeed = AutoSpeed/2;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
             clearInterval(intervalId)
@@ -167,6 +177,7 @@
             localStorage.setItem('AutoSpeed',AutoSpeed);
             localStorage.setItem('SpeedCost',SpeedCost);
             localStorage.setItem('RebirthCost',RebirthCost);
+            localStorage.setItem('Rebirth',Rebirth);
         }
         function LoadData(){
             count = parseInt(localStorage.getItem('Count'));
@@ -177,6 +188,7 @@
             AutoSpeed = parseInt(localStorage.getItem('AutoSpeed'));
             SpeedCost = parseInt(localStorage.getItem('SpeedCost'));
             RebirthCost = parseInt(localStorage.getItem('RebirthCost'));
+            Rebirth = parseInt(localStorage.getItem('Rebirth'));
             updateDisplay()
         }
         
@@ -189,6 +201,7 @@
             AutoSpeed=10000;
             SpeedCost=100;
             RebirthCost=2000000;
+            Rebirth=0;
             localStorage.clear();
             updateDisplay()
         }
@@ -198,7 +211,13 @@
         if (!value){
             saveData()
         }
-        window.onload = LoadData
+        
+        //startup
+        function start(){
+            LoadData()
+            intervalId=setInterval(tick,AutoSpeed)
+        }
+        window.onload = start()
     </script>
 
 </body>
