@@ -79,7 +79,7 @@
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
             document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth;
             
-            if (SpeedCost>=900)
+            if (SpeedCost>=102400)
             {
                 document.getElementById("Speed").textContent="MAX";
                 Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + "Infinite";
@@ -108,7 +108,7 @@
                 document.getElementById("Auto").disabled = false;
             }
             if (count>=SpeedCost){
-                if (SpeedCost<=900){
+                if (SpeedCost<=102400){
                     document.getElementById("Speed").disabled = false;
                 }
             }
@@ -146,7 +146,7 @@
         
         function HalfAuto(){
             count-=SpeedCost;
-            SpeedCost+=100;
+            SpeedCost = SpeedCost*2;
             AutoSpeed = AutoSpeed/2;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
             clearInterval(intervalId)
