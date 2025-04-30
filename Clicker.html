@@ -37,6 +37,7 @@
     
     <footer>
         <a href="#" onclick="ClearData()">Clear save</a>
+        <a href="#">Toggle vibrations (andriod only)</a>
     </footer>
 
 
@@ -52,11 +53,14 @@
         var SpeedCost=100;
         var RebirthCost=2000000;
         
+        var vibrateToggle = true;
         
         var intervalId = setInterval(tick,AutoSpeed)
         
         function tick(){
-            navigator.vibrate(200);
+            if (vibrateToggle){    
+                navigator.vibrate(200);
+            }
             count+=autoMultiplier;
             updateDisplay()
             disabling()
@@ -104,7 +108,9 @@
             
         }
         function increment(){
-            navigator.vibrate(200);
+            if (vibrateToggle){    
+                navigator.vibrate(200);
+            }
             count+=Increment;
             updateDisplay()
             disabling()
@@ -138,6 +144,8 @@
             updateDisplay()
             disabling()
         }
+
+        function ToggleVibrate(){vibrateToggle!=vibrateToggle}
 
         //Data handling
 
