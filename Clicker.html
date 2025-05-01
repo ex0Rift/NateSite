@@ -30,9 +30,9 @@
     <div class="Rebirth">
         <div>
             <h2 id="RebirthNum">Rebirth: 0</h2>
-            <p>cost:2,000,000</p>
+            <p id="RebirthCostDisplay">cost:2,000,000</p>
         </div>
-        <button id="Rebirth" disabled>Coming Soon</button>
+        <button id="Rebirth" onclick="rebirthF()" disabled>Rebirth</button>
     </div>
     
     <footer>
@@ -68,7 +68,6 @@
             enabling()
         }
         
-        
         function updateDisplay(){
             const ClickerCounter = document.getElementById("ClickCounter")
             const Display = document.getElementById("Display")
@@ -78,6 +77,7 @@
             document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
             document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth;
+            document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost;
             
             if (SpeedCost>=102400)
             {
@@ -126,6 +126,16 @@
             disabling()
             enabling()
         }
+
+        function rebirthF(){
+            count=0;
+            RebirthCost=RebirthCost*5;
+            Rebirth+=1;
+            updateDisplay()
+            disabling()
+            enabling()
+        }
+
         function multiplier(){
             count -=ClickCost;
             Increment+=1;
@@ -193,7 +203,7 @@
         }
         
         function ClearData(){
-            count=0;
+            count=2000000;
             Increment=1;
             ClickCost=10;
             AutoCost = 50;
