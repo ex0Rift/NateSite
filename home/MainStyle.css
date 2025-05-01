@@ -26,13 +26,28 @@ header{
     padding-right: 30px;
 }
 
+footer{
+    background-color: #3C6E71;
+    color: white;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+}
+
+footer p{
+    padding-left: 100px;
+
+}
+
 a{
     text-decoration: none;
     color: inherit;
 }
 
 button{
-    background-color: #284B63;
+    background-color: #3C6E71;
     border: none;
     color: white;
     border-radius: 50px;
@@ -42,7 +57,7 @@ button{
 }
 
 button:hover{
-    background-color: #203d50;
+    background-color: #315a5c;
 }
 
 .Logo{
@@ -54,20 +69,52 @@ button:hover{
 
 .Hero{
     position: relative;
+    overflow: hidden;
+    height: 100vh;
     color: white;
+}
+
+.Hero button{
+    position: absolute;
+    bottom: 60px;
+    right: 10px;
+    font-size: 3vh;
+    padding: 2vh 2.5vh;
+    
+    margin-top: 5px;
 }
 
 .HeroText{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-150%);
     color:white;
     font-size: 10vw;
     font-weight: bold;
+}
+
+.HeroDescription{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    color:white;
+    font-size: 2vw;
+    font-weight: thin;
 }
 
 .HeroImage{
     width: 100%;
     height: auto;
 }
+
+.Projects{
+    display: flex;
+    background-color: #D9D9D9;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+
