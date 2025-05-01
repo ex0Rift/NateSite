@@ -29,7 +29,7 @@
     
     <div class="Rebirth">
         <div>
-            <h2 id="RebirthNum">Rebirth: 0</h2>
+            <h2 id="RebirthNum">Rebirth: 0 (0x mult)</h2>
             <p id="RebirthCostDisplay">cost:2,000,000</p>
         </div>
         <button id="Rebirth" onclick="rebirthF()" disabled>Rebirth</button>
@@ -76,10 +76,10 @@
             document.getElementById("Extra").textContent="Extra Click - " + ClickCost;
             document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
-            document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth;
-            document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost;
+            document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth+" ("+(Rebirth+1)+"x mult)";
+            document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             
-            if (SpeedCost>=102400)
+            if (SpeedCost>=1000002400)
             {
                 document.getElementById("Speed").textContent="MAX";
                 Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + "Infinite";
@@ -121,7 +121,7 @@
             if (vibrateToggle){    
                 navigator.vibrate(200);
             }
-            count+=Increment;
+            count+=Increment*(Rebirth+1);
             updateDisplay()
             disabling()
             enabling()
@@ -131,6 +131,12 @@
             count=0;
             RebirthCost=RebirthCost*5;
             Rebirth+=1;
+            Increment=1;
+            ClickCost=10;
+            AutoCost = 50;
+            autoMultiplier = 0;
+            AutoSpeed=10000;
+            SpeedCost=100;
             updateDisplay()
             disabling()
             enabling()
@@ -203,7 +209,7 @@
         }
         
         function ClearData(){
-            count=2000000;
+            count=0;
             Increment=1;
             ClickCost=10;
             AutoCost = 50;
