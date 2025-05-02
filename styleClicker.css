@@ -7,9 +7,17 @@ html, body{
 
 
 body{
-    background-color: cadetblue;
+    margin: 0;
+    height: 100hv;
     font-family: Arial, sans-serif;
     text-align: center;
+    background: linear-gradient(-45deg, orange, cadetblue, orange);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
 }
 
 .Left{
@@ -148,4 +156,10 @@ footer{
     100%{
         box-shadow: 0 0 60px orange;
     }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%;}
 }
