@@ -42,9 +42,13 @@ footer p{
 
 }
 
-a{
+header a{
     text-decoration: none;
     color: inherit;
+}
+
+a{
+    color: black;
 }
 
 button{
@@ -121,9 +125,18 @@ button:hover{
 
 .container{
     border: 1px solid black;
+    width: inherit;
     padding-inline: 40px;
-    height: 500px;
+    padding-bottom: 40px;
     border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.containerThumbnail{
+    margin: -40px;
+    width: calc(100% + 80px);
+    height: auto;
     margin-bottom: 20px;
 }
 
