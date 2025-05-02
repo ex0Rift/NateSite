@@ -5,7 +5,7 @@ body{
     font-family: roboto;
     padding-top:50px;
     margin: 0;
-    scrollbar-width: none;
+    
 }
 
 header{
@@ -71,6 +71,7 @@ button:hover{
     position: relative;
     overflow: hidden;
     height: 100vh;
+    width: 100%;
     color: white;
 }
 
@@ -105,16 +106,46 @@ button:hover{
 }
 
 .HeroImage{
-    width: 100%;
-    height: auto;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
-.Projects{
-    display: flex;
-    background-color: #D9D9D9;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 10px;
+.wrapper{
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-left: 40px;
 }
 
+.container{
+    border: 1px solid black;
+    padding-left: 40px;
+    height: 500px;
+}
+
+.title{
+    color: #3C6E71;
+}
+
+/*Vertical alignment*/
+
+@media(orientation:portrait){
+    body::-webkit-scrollbar{
+        display: none;
+    }
+
+    .HeroImage{
+        height: 100vh;
+        width: auto;
+    }
+
+    .HeroText{
+        font-size: 20vw;
+    }
+
+    .HeroDescription{
+        font-size: 4vw;
+        text-align: center;
+    }
+}
