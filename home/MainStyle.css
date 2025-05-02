@@ -34,6 +34,7 @@ footer{
     bottom: 0;
     left: 0;
     height: 100px;
+    margin-top: 120px;
 }
 
 footer p{
@@ -123,6 +124,7 @@ button:hover{
     padding-inline: 40px;
     height: 500px;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .title{
@@ -132,6 +134,7 @@ button:hover{
 .CardContainer{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .card{
