@@ -122,10 +122,31 @@ button:hover{
     border: 1px solid black;
     padding-left: 40px;
     height: 500px;
+    border-radius: 20px;
 }
 
 .title{
     color: #3C6E71;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius:20px ;
+    width: 250px;
+    height: 200px;
+    padding-bottom:10px;
+    overflow: hidden;
+}
+
+.thumbnail{
+    padding: 0;
+    width: inherit;
+    height: auto;
+}
+
+h3{
+    padding: 0;
+    margin: 0;
 }
 
 /*Vertical alignment*/
