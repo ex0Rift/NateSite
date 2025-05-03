@@ -32,8 +32,9 @@ body{
     margin: 0;
     height: 100hv;
     background: linear-gradient(-45deg, orange, cadetblue, orange);
-    background-size: 400% 400%;
+    background-size: 600% 600%;
     animation: gradientShift 15s ease infinite;
+    background-repeat: no-repeat;
     
     font-family: Arial, sans-serif;
     text-align: center;
