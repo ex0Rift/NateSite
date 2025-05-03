@@ -1,0 +1,14 @@
+
+body{
+    background-color: lightblue;
+    backdrop-filter: blur(8px);
+}
+
+.container{
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    padding-inline: 50px;
+    width: 450px;
+    height: 400px;
+}
