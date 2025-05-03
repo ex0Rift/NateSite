@@ -56,7 +56,7 @@ button:disabled{
 
 .Main{
     background: transparent;
-    background-image: url("images/button.png");
+    background-image: url("../images/button.png");
     border: none;
     padding: 110px 110px;
     font-size: 30px;
