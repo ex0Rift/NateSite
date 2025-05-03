@@ -26,6 +26,16 @@ header{
     padding-right: 30px;
 }
 
+header div{
+    display: flex;
+    align-items: center;
+    gap:inherit;
+}
+
+.Burger{
+    display: none;
+}
+
 footer{
     background-color: #3C6E71;
     color: white;
@@ -175,11 +185,65 @@ cardP{
     padding-left: 10px;
 }
 
+.blur{
+    z-index: 12;
+    position: fixed;
+    inset: 0;
+    background: rgba(81, 111, 131, 0.3);
+    backdrop-filter: blur(8px);
+
+}
+
+.PopUp{
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+    z-index: 13;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: auto;
+    padding-bottom: 20px;
+    transform: translate(-50%,-50%);
+}
+
 /*Vertical alignment*/
+
+.Menu{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 40px;
+    border-top: 1px solid #315a5c;
+    background-color: #3C6E71;
+    position: fixed;
+    text-align: center;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 11;
+    transition: all 1s ease-out;
+}
+
+.Menu a{
+    color: #FFFFFF;
+    font-size: 3vh;
+}
 
 @media(orientation:portrait){
     body::-webkit-scrollbar{
         display: none;
+    }
+
+    header div{
+        display: none;
+    }
+
+    .Burger{
+        display: flex;
+        height: 30px;
+        width: auto;
     }
 
     .HeroImage{
@@ -194,5 +258,36 @@ cardP{
     .HeroDescription{
         font-size: 4vw;
         text-align: center;
+    }
+
+    .Hero div a button{
+        position: fixed;
+        border: 1px solid #315a5c;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .wrapper{
+        margin-inline: 10px;
+        padding: 0;
+        width: 90vw;
+    }
+
+    .container{
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .CardContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .title{
+        padding-left: 20px;
     }
 }

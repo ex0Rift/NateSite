@@ -10,13 +10,25 @@
 <body class="about">
     <header>
         <img class="Logo" src="../images/Logo.png">
-        <a href="https://www.instagram.com/info.natesite?igsh=M2c5amw4eXRvMDl5">
-            <img style="height: 30px; width: auto;" src="../images/InstaLogo.png">
+        <div class="HeaderItems">
+            <a href="https://www.instagram.com/info.natesite?igsh=M2c5amw4eXRvMDl5">
+                <img style="height: 30px; width: auto;" src="../images/InstaLogo.png">
+            </a>
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a class="Burger">
+            <img onclick="OpenMobileMenu()" src="../images/burger.png" alt="">
         </a>
-        <a href="Main.html">Home</a>
-        <a href="#">Projects</a>
-        <a href="contact.html">Contact</a>
     </header>
+
+    <div id="MobileMenu" class="Menu">
+        <a href="Main.html">Home</a>
+        <a>Projects</a>
+        <a href="contact.html">contact</a>
+    </div>
 
     <div class="wrapper">
         <h1 class="title">About Us</h1>
@@ -56,4 +68,18 @@
     <footer>
         <p>©2025 Nathanael Davies - info.natesite@gmail.com</p>
     </footer>
+
+    <script>
+        var MobileMenuToggle = false;
+
+        function OpenMobileMenu(){
+            if (MobileMenuToggle){
+                document.getElementById("MobileMenu").style.display="none";
+            }else{
+                document.getElementById("MobileMenu").style.display="flex";
+            }
+
+            MobileMenuToggle = !MobileMenuToggle;
+        }
+    </script>
 </body>

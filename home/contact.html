@@ -10,13 +10,25 @@
 <body>
     <header>
         <img class="Logo" src="../images/Logo.png">
-        <a href="https://www.instagram.com/info.natesite?igsh=M2c5amw4eXRvMDl5">
-            <img style="height: 30px; width: auto;" src="../images/InstaLogo.png">
+        <div class="HeaderItems">
+            <a href="https://www.instagram.com/info.natesite?igsh=M2c5amw4eXRvMDl5">
+                <img style="height: 30px; width: auto;" src="../images/InstaLogo.png">
+            </a>
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a class="Burger">
+            <img onclick="OpenMobileMenu()" src="../images/burger.png" alt="">
         </a>
+    </header>
+
+    <div id="MobileMenu" class="Menu">
         <a href="Main.html">Home</a>
         <a href="about.html">About</a>
-        <a href="#">Projects</a>
-    </header>
+        <a>Projects</a>
+    </div>
 
     <div class="wrapper">
         <h1 class="title">Contact Us</h1>
@@ -26,7 +38,7 @@
             <a href="mailto:info.natesite@gmail.com"><h2>Email - info.natesite@gmail.com</h2></a>
             <h2>Call - +44 7443 848735</h2>
         </div>
-        <p style="flex-grow: 1;"></p>
+        <p style="height: 500px;"></p>
     </div>
 
     
@@ -34,6 +46,20 @@
     <footer style="margin-top: 0;">
         <p>©2025 Nathanael Davies - info.natesite@gmail.com</p>
     </footer>
+
+    <script>
+        var MobileMenuToggle = false;
+
+        function OpenMobileMenu(){
+            if (MobileMenuToggle){
+                document.getElementById("MobileMenu").style.display="none";
+            }else{
+                document.getElementById("MobileMenu").style.display="flex";
+            }
+
+            MobileMenuToggle = !MobileMenuToggle;
+        }
+    </script>
 
 </body>
 </html>
