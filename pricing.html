@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pricing</title>
+    <link rel="stylesheet" href="MainStyle.css">
+    <link rel="icon" href="images/Logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img class="Logo" src="images/Logo.png">
+        <div class="HeaderItems">
+            <a href="https://www.instagram.com/info.natesite?igsh=M2c5amw4eXRvMDl5">
+                <img style="height: 30px; width: auto;" src="images/InstaLogo.png">
+            </a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a class="Burger">
+            <img onclick="OpenMobileMenu()" src="images/burger.png" alt="">
+        </a>
+    </header>
+
+    <div id="MobileMenu" class="Menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a>Projects</a>
+    </div>
+
+    <div class="wrapper">
+        <h1 class="title">Pricing</h1>
+        <div class="container" style="padding-inline: 0;">
+            <h1 style="padding-left: 10px;">What to expect from us</h1>
+            <p style="padding-left: 15px;">
+                Troughout all our services you get our full support to all your web needs.<br>
+                Whether you already have a domain or we provide you with one, expect the most
+                 profesional or fun website to your needs. Check out our payment plans below and 
+                 make sure to enquire us about what we could give to you today.
+            </p>
+        </div>
+        <div class="CardContainer">
+            <div class="V-card">
+                <h1>£24.67<small style="font-size: 15px;">pm</small></h1><hr>
+                <h2>Basic</h2>
+                <h3>Incudes:</h3>
+                <li>Small website</li>
+                <li>We host for you</li>
+                <li>Personal Domian</li>
+                <li>Support that cares</li>
+            </div>
+            <div class="V-card">
+                <h1>£54.89<small style="font-size: 15px;">pm</small></h1><hr>
+                <h2>Premier</h2>
+                <h3>Incudes:</h3>
+                <li>Large website</li>
+                <li>We host for you</li>
+                <li>Personal Domain</li>
+                <li>Support that cares</li>
+                <li>smoother animations</li>
+                <li>faster laoding times</li>
+                <li>Priority in our work</li>
+            </div>
+            <div class="V-card">
+                <h1>For you</h1><hr>
+                <p>
+                    Let us give you a quote for whats best for you!<br><br>
+                    just drop us an email with what your looking for and we will get a quote with a price back in no time.<br><br>
+                    This ranges from designing a website for somthing specific to full writing , creation and hosting with our support.<br><br>
+
+                    <a href="contact.html">
+                        <button style="padding: 10px 30px;">Email Us</button>
+                    </a>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <footer style="margin-top: 0;">
+        <p>©2025 Nathanael Davies - info.natesite@gmail.com</p>
+    </footer>
+
+    <script>
+        var MobileMenuToggle = false;
+
+        function OpenMobileMenu(){
+            if (MobileMenuToggle){
+                document.getElementById("MobileMenu").style.display="none";
+            }else{
+                document.getElementById("MobileMenu").style.display="flex";
+            }
+
+            MobileMenuToggle = !MobileMenuToggle;
+        }
+    </script>
+
+</body>
+</html>

@@ -171,6 +171,35 @@ button:hover{
     overflow: hidden;
 }
 
+.V-card{
+    border-radius: 20px;
+    width: 200px;
+    height: 500px;
+    border: 1px solid black;
+    padding-inline: 5pxpx;
+    text-align: center;
+}
+
+.V-card h1{
+    color: #3C6E71;
+    font-size: 45px;
+    text-align: center;
+}
+
+.V-card h3{
+    color: rgb(92, 91, 91);
+    text-align: left;
+}
+
+.V-card li{
+    text-align: left;
+    padding-left: 15px;
+}
+
+.V-card hr{
+    margin-inline: 20px;
+}
+
 .ProjectCardContainer{
     display: flex;
     flex-direction: column;
