@@ -1,0 +1,165 @@
+﻿
+header{
+    display: none;
+    background-color: darkcyan;
+    width: 100%;
+}
+
+nav ul{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul a :hover{
+    background-color: aquamarine;
+    border-radius: 4px;
+}
+
+
+body{
+    margin: 0;
+    height: 100hv;
+    background: linear-gradient(-45deg, orange, cadetblue, orange);
+    background-size: 600% 600%;
+    animation: gradientShift 15s ease infinite;
+    background-repeat: no-repeat;
+    
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+button{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 0 0 15px darkmagenta;
+    transition: all 0.9s ease;
+    animation: pulseglow 1.5s infinite;
+}
+
+button:disabled{
+    background-color: gray;
+    box-shadow: none;
+    animation: none;
+}
+
+input{
+    border-color: blueviolet;
+    background-color: blueviolet;
+    color: white;
+    box-sizing: border-box;
+}
+
+input:hover{
+    border-color: brown;
+}
+
+button:hover{
+    background-color: darkorchid;
+    box-shadow: 0 0 25px blueviolet;
+    animation: none;
+}
+
+.BigText{
+    color: white;
+    font-size: large;
+    width: 80%;
+    margin: 0 auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap:break-word ;
+}
+
+.Special{
+    color: white;
+    text-shadow:0 0 15px orange;
+    animation: FunText 1s infinite ease-in-out ;
+}
+
+.images{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hidden{
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.visible{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+@keyframes wave {
+    0%,100% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes FunText {
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseglow {
+    0% {
+        box-shadow: 0 0 15px darkmagenta;
+    }
+    50% {
+        box-shadow: 0 0 30px darkmagenta;
+    }
+    100% {
+        box-shadow: 0 0 15px darkmagenta;
+    }
+    
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%;}
+}
