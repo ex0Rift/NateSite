@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
     background-color: #FFFFFF;
-    font-family: roboto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif , serif;
     padding-top:50px;
     margin: 0;
     
@@ -101,6 +102,7 @@ button:hover{
 }
 
 .HeroText{
+    font-family: 'Roboto',sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -167,6 +169,21 @@ button:hover{
     height: 200px;
     padding-bottom:10px;
     overflow: hidden;
+}
+
+.ProjectCardContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ProjectCard{
+    overflow: hidden;
+    height: 150px;
+    display: flex;
+    gap:20px;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
 .thumbnail{
