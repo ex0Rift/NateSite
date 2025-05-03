@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NateSite</title>
     <link rel="stylesheet" href="MainStyle.css">
+    <link rel="icon" href="../images/Logo.png" type="image/png">
 </head>
 <body>
     <header>
         <img class="Logo" src="../images/Logo.png">
-        <a href="../index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <div class="HeaderItems">
+            <a href="https://www.instagram.com/info.natesite?igsh=M2c5amw4eXRvMDl5">
+                <img style="height: 30px; width: auto;" src="../images/InstaLogo.png">
+            </a>
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a class="Burger">
+            <img onclick="OpenMobileMenu()" src="../images/burger.png" alt="">
+        </a>
     </header>
+
+    <div id="MobileMenu" class="Menu">
+        <a href="about.html">About</a>
+        <a>Projects</a>
+        <a href="contact.html">contact</a>
+    </div>
 
     <div class="Hero">
         <img class="HeroImage" src="../images/ocean.jpg">
@@ -26,10 +41,35 @@
         </div>
     </div>
 
-    <footer>
-        <p>
-            ©2025 Nathanael Davies</p>
+    <div id="blur" class="blur"></div>
+    <div id="PopUp" class="PopUp">
+        <h1>Notice!</h1>
+        <p>This site is currently under construction.</p>
+        <button style="padding: 10px 20px;" onclick="HidePopUp()">Okay!</button>
+    </div>
+
+    <footer style="margin-top: 0;">
+        <p>©2025 Nathanael Davies - info.natesite@gmail.com</p>
     </footer>
+
+    <script>
+        var MobileMenuToggle = false;
+
+        function HidePopUp(){
+            document.getElementById("blur").style.display = "none";
+            document.getElementById("PopUp").style.display = "none";
+        }
+
+        function OpenMobileMenu(){
+            if (MobileMenuToggle){
+                document.getElementById("MobileMenu").style.display="none";
+            }else{
+                document.getElementById("MobileMenu").style.display="flex";
+            }
+
+            MobileMenuToggle = !MobileMenuToggle;
+        }
+    </script>
 
 </body>
 </html>

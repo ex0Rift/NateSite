@@ -66,6 +66,12 @@ button{
     animation: pulseglow 1.5s infinite;
 }
 
+button:disabled{
+    background-color: gray;
+    box-shadow: none;
+    animation: none;
+}
+
 input{
     border-color: blueviolet;
     background-color: blueviolet;
