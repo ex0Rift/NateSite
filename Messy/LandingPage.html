@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NateSite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+    <header><!--This is hidden currently in CSS-->
+        <nav>
+            <ul>
+                <a href="more.html">More</a>
+                <a href="beescript.html">Bee Script</a> 
+            </ul>
+        </nav>
+    </header> 
+
+    <h1 id="MainText">Hello World!</h1>
+    <p>Welcome to my website!</p>
+    
+    <div>
+        <button onclick="SecretHide()">Click me</button> 
+        <a href="more.html">
+            <button> To more</button>
+        </a>
+        <a href="beescript.html">
+            <button>Bee movie</button>
+        </a>
+        <a href="Forms.html">
+            <button>Forms</button>
+        </a>
+        <a href="Clicker.html">
+            <button>Clicker Game</button>
+        </a>
+        <a href="LoginPage/Login.html">
+            <button disabled>Login Page</button>
+        </a>
+        <a href="home/Main.html">
+            <button>Future Landing Page</button>
+        </a>
+    </div>  
+    
+    <p id="Secret" class="hidden">Ewan stinky!</p>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1317864573611683"
+            crossorigin="anonymous"></script>
+    <script>
+        let toggled = false;
+        let secretVisable = false;
+        function changeText(){
+            const heading = document.getElementById("MainText");
+            
+            if (toggled){
+                heading.textContent = "Welcome!";
+            } else {
+                heading.textContent = "You pressed";
+            }
+            
+            toggled = !toggled;
+        }
+        
+        function SecretHide(){
+            const secret = document.getElementById("Secret");
+            secret.classList.toggle("visible");
+            secret.classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+</html>
