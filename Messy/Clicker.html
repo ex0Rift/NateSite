@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Clicker Game</title>
+    <title>Orange Clicker</title>
     <link rel="stylesheet" href="styleClicker.css">
     <link rel="icon" href="../images/favicon.png" type="../image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
-    <img id="saver" class="Left" src="../images/button.png">
+    <img id="orange1" src="images/orange1.png" width="100">
+
+    <img id="saver" class="Left" src="../images/orange1.png">
 
     <a href="../index.html">
         <button class="MainButton" onclick="saveData()">Go home</button>
@@ -57,6 +59,28 @@
         var vibrateToggle = true;
         
         var intervalId = setInterval(tick,AutoSpeed)
+
+        document.getElementById("orange1").addEventListener("click", function (e) {
+            const juice = document.createElement("img");
+            juice.src = "images/glassorange.png";
+            juice.className = "falling-object";
+
+            juice.style.position = "absolute";
+            juice.style.left = `${e.pageX - 25}px`;
+            juice.style.top = `${e.pageY - 25}px`;
+
+            juice.style.transform = "none";
+
+            document.body.appendChild(juice);
+
+            requestAnimationFrame(() => {
+                juice.classList.add("fall");
+            });
+
+            setTimeout(() => {
+                juice.remove();
+            }, 2000);
+        });
         
         function tick(){
             if (vibrateToggle){    

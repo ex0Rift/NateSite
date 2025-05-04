@@ -8,7 +8,7 @@ html, body{
 
 body{
     margin: 0;
-    height: 100hv;
+    height: 100vh;
     font-family: Arial, sans-serif;
     text-align: center;
     background: linear-gradient(-45deg, orange, cadetblue, orange);
@@ -56,7 +56,9 @@ button:disabled{
 
 .Main{
     background: transparent;
-    background-image: url("../images/button.png");
+    background-image: url("../images/orange1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     border: none;
     padding: 110px 110px;
     font-size: 30px;
@@ -130,6 +132,22 @@ footer{
     gap: 20px;
 }
 
+.falling-object {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1000;
+    opacity: 1;
+    pointer-events: none;
+    transform: none;
+    transition: transform 2s ease, opacity 2s ease;
+   
+}
+
+.fall {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+}
 
 @keyframes shake{
     0%{transform: rotate(0deg);}
