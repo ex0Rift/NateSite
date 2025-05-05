@@ -42,7 +42,7 @@ p{
 }
 
 button{
-    background-color: darkorange;
+    background-color: orange;
     color: black;
     border: none;
     padding: 10px 30px;
@@ -60,11 +60,16 @@ button:disabled{
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
+    border-radius: 8px;
     padding: 110px 110px;
     font-size: 30px;
     border-radius: 30px;
     transition: all 0.5s ease;
     margin-bottom: 30px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 .Main:active{
@@ -134,6 +139,29 @@ footer{
 }
 
 
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: gold;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall 1s ease-out forwards;
+    z-index: 9999;
+}
+  
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) scale(0.7) rotate(180deg);
+    }
+}
+
+
 @keyframes shake{
     0%{transform: rotate(0deg);}
     25%{transform: rotate(10deg);}
@@ -167,3 +195,4 @@ footer{
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%;}
 }
+

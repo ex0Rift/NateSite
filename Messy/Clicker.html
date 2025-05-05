@@ -11,13 +11,15 @@
 
 
     <a href="../index.html">
-        <button class="MainButton" onclick="saveData()">Go home</button>
+        <button class="MainButton" onclick="saveData()">Home</button>
     </a>
     <h1 id="ClickCounter">Clicks:0</h1>
     <p id="Display">1x per click | 0x per 10s</p>
 
     <div>
-        <button class="Main" onclick="increment()"></button>
+        <button class="Main" onclick="increment()"
+            id="particle-button";
+        ></button>
     </div>  
     
     <div>
@@ -227,12 +229,35 @@
             saveData()
         }
         
-        //startup
         function start(){
             LoadData()
             intervalId=setInterval(tick,AutoSpeed)
         }
         window.onload = start()
+
+        const button = document.getElementById('particle-button');
+
+        button.addEventListener('click', (e) => {
+            const originX = e.clientX + window.scrollX;
+            const originY = e.clientY + window.scrollY;
+
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+
+                const dx = (Math.random() - 0.5) * 100 + 'px';
+                const dy = 150 + Math.random() * 200 + 'px';
+
+                particle.style.left = `${originX}px`;
+                particle.style.top = `${originY}px`;
+                particle.style.setProperty('--dx', dx);
+                particle.style.setProperty('--dy', dy);
+
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1000);
+        }
+    });
+
     </script>
 
 </body>
