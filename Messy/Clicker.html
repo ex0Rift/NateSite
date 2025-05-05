@@ -126,6 +126,8 @@
             updateDisplay()
             disabling()
             enabling()
+
+            spawnFallingImage();
         }
 
         function rebirthF(){
@@ -221,6 +223,19 @@
             Rebirth=0;
             localStorage.clear();
             updateDisplay()
+        }
+
+        function spawnFallingImage() {
+            const img = document.createElement('img');
+            img.src = '../images/glassorange.png'; 
+            img.className = 'falling-orange';
+
+            img.style.left = Math.random() * window.innerWidth + 'px';
+
+            document.body.appendChild(img);
+
+            setTimeout(() => img.remove(), 3000);
+
         }
         
         

@@ -148,6 +148,27 @@ footer{
     z-index: 9999;
     opacity: 0.8;
 }
+
+.falling-orange {
+    position: absolute;
+    top: -50px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    animation: fallFromTop 3s linear forwards;
+    z-index: 0;
+}
+
+@keyframes fallFromTop {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
   
 @keyframes fallAndsparkle {
     0% {
