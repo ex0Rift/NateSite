@@ -242,11 +242,13 @@
             const originY = e.clientY + window.scrollY;
 
             for (let i = 0; i < 15; i++) {
-                const particle = document.createElement('div');
+                const particle = document.createElement('img');
+                particle.src = "../images/orange1.png"
                 particle.className = 'particle';
 
                 const dx = (Math.random() - 0.5) * 100 + 'px';
                 const dy = 150 + Math.random() * 200 + 'px';
+                const scale = Math.random() * 0.5 + 0.5;
 
                 particle.style.left = `${originX}px`;
                 particle.style.top = `${originY}px`;

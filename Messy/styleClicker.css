@@ -141,14 +141,11 @@ footer{
 
 .particle {
     position: absolute;
-    width: 6px;
-    height: 6px;
-    background: radial-gradient(white, orange, transparent);
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
     pointer-events: none;
     animation: fallAndsparkle 1s ease-out forwards;
     z-index: 9999;
-    filter: blur(1px);
     opacity: 0.8;
 }
   
@@ -156,11 +153,9 @@ footer{
     0% {
         opacity: 1;
         transform: translate(0, 0) scale(1) rotate(0deg);
-        filter: blur(1px);
     }
     50% {
         opacity: 0.8;
-        filter: blur(2px);
         transform: translate(var(--dx), var(--dy)) scale(1.5) rotate(90deg);
     }
     100% {
