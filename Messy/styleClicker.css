@@ -5,7 +5,7 @@ html, body{
     margin: 0;
 }
 
-
+/* Background */
 body{
     margin: 0;
     height: 100vh;
@@ -30,7 +30,9 @@ body{
     height: auto;
     animation:Rotate 1.5s infinite linear ;
 }
+/* End of background */
 
+/* Text (1/5) */
 h1{
     padding: 10px;
     color: black;
@@ -40,7 +42,9 @@ p{
     margin-bottom: 40px;
     color: black;
 }
+/* End of text (1/5)
 
+/* Upgrade buttons */
 button{
     background-color: orange;
     color: black;
@@ -49,11 +53,15 @@ button{
     border-radius: 10px;
     transition: all 0.5s ease-out;
 }
+/* End of Upgrade buttons */
 
+/* disable button */
 button:disabled{
     background-color: lightgray;
 }
+/* End of disable button */
 
+/* Orange image */
 .Main{
     background: transparent;
     background-image: url("../images/orange1.png");
@@ -71,7 +79,9 @@ button:disabled{
     position: relative;
     z-index: 1;
 }
+/* End of orange image */
 
+/* Animation for orange */
 .Main:active{
     animation: shake 0.5s ease-in-out;
 }
@@ -106,13 +116,18 @@ button:disabled{
     margin-right: 5px;
     box-shadow: 0 0 15px darkorange;
     transition: all 0.9s ease;
+    animation: shake 0.5s;
 }
+/* End of Orange button */
 
+/* smaller text (2/5) */
 h2{
     color: black;
     margin-bottom: 0;
 }
+/* End of smaller text (2/5) */
 
+/* rebirth button */
 .Rebirth{
     display: flex;
     justify-content: center;
@@ -123,7 +138,9 @@ h2{
 .Rebirth button{
     height: 80px;
 }
+/* End of rebirth */
 
+/* Footer */
 footer{
     background-color: darkorange;
     display: flex;
@@ -137,8 +154,9 @@ footer{
     gap: 20px;
     box-shadow: 0 0 15px darkorange;
 }
+/* End of footer*/
 
-
+/* orange falling */
 .particle {
     position: absolute;
     width: 24px;
@@ -158,6 +176,11 @@ footer{
     animation: fallFromTop 3s linear forwards;
     z-index: 0;
 }
+
+/* End or orange falling */
+
+
+/* Animation */
 
 @keyframes fallFromTop {
     0% {
@@ -221,3 +244,4 @@ footer{
     100% { background-position: 0% 50%;}
 }
 
+/* End of animation */
