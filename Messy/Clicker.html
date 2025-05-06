@@ -10,9 +10,12 @@
 <body>
 
 
-    <a href="../index.html">
+    <a href="LandingPage.html">
         <button class="MainButton" onclick="saveData()">Home</button>
     </a>
+
+    <button style="top: 60px; padding-inline: 34px;"class="MainButton" onclick="saveData()">Save</button>
+
     <h1 id="ClickCounter">Clicks:0</h1>
     <p id="Display">1x per click | 0x per 10s</p>
 
@@ -256,7 +259,7 @@
             const originX = e.clientX + window.scrollX;
             const originY = e.clientY + window.scrollY;
 
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 3; i++) {
                 const particle = document.createElement('img');
                 particle.src = "../images/orange1.png"
                 particle.className = 'particle';
