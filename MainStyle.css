@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*This is for the whole and background*/
+
 body{
     background-color: #FFFFFF;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif , serif;
@@ -8,6 +10,8 @@ body{
     margin: 0;
     
 }
+
+/*The top navigation bar*/
 
 header{
     background-color: #3C6E71;
@@ -33,9 +37,24 @@ header div{
     gap:inherit;
 }
 
+header a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.Logo{
+    width: 60px;
+    height: auto;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+/*The mobile drop down menu icon*/
 .Burger{
     display: none;
 }
+
+/*The very bottom item for infomation*/
 
 footer{
     background-color: #3C6E71;
@@ -53,14 +72,11 @@ footer p{
 
 }
 
-header a{
-    text-decoration: none;
-    color: inherit;
-}
-
 a{
     color: black;
 }
+
+/*Default button styling*/
 
 button{
     background-color: #3C6E71;
@@ -76,12 +92,7 @@ button:hover{
     background-color: #315a5c;
 }
 
-.Logo{
-    width: 60px;
-    height: auto;
-    margin-right: auto;
-    padding-left: 20px;
-}
+/*This is the main page hero image section*/
 
 .Hero{
     position: relative;
@@ -127,6 +138,8 @@ button:hover{
     width: 100vw;
     height: 100vh;
 }
+
+/*This is the container designing for elements in screen*/
 
 .wrapper{
     width: 700px;
@@ -215,6 +228,11 @@ button:hover{
     border-radius: 20px;
 }
 
+.ProjectCardImage{
+    width: auto;
+    height: inherit;
+}
+
 .thumbnail{
     padding: 0;
     width: inherit;
@@ -277,6 +295,7 @@ cardP{
     font-size: 3vh;
 }
 
+/*applies when the screen height is more than width*/
 @media(orientation:portrait){
     body::-webkit-scrollbar{
         display: none;
@@ -302,8 +321,9 @@ cardP{
     }
 
     .HeroDescription{
-        font-size: 4vw;
+        font-size: 5vw;
         text-align: center;
+        text-shadow: 0 0 15px gray, 0 0 10px black;
     }
 
     .Hero div a button{
@@ -335,5 +355,28 @@ cardP{
 
     .title{
         padding-left: 20px;
+    }
+
+    .ProjectCardContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .ProjectCard{
+        overflow: hidden;
+        height: 450px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .ProjectCardImage{
+        width: inherit;
+        height: auto;
     }
 }
