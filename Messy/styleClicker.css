@@ -61,6 +61,20 @@ button:disabled{
 }
 /* End of disable button */
 
+/* Box */
+.box {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 250px;
+    height: 100vh;
+    background-color: darkorange;
+    z-index: 0;
+    animation: glowingBackground 1.5s infinite ease-in-out;
+    box-shadow: -10px 0 15px 10px darkorange
+}
+/* End of box */
+
 /* Orange image */
 .Main{
     background: transparent;
@@ -116,7 +130,7 @@ button:disabled{
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    box-shadow: 0 0 15px darkorange;
+    box-shadow: 15px 0 0 darkorange;
     transition: all 0.9s ease;
     animation: shake 0.5s;
 }
