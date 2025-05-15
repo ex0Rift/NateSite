@@ -44,6 +44,7 @@ p{
 }
 /* End of text (1/5)
 
+
 /* Upgrade buttons */
 button{
     background-color: orange;
@@ -61,19 +62,6 @@ button:disabled{
 }
 /* End of disable button */
 
-/* Box */
-.box {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 250px;
-    height: 100vh;
-    background-color: darkorange;
-    z-index: 0;
-    animation: glowingBackground 1.5s infinite ease-in-out;
-    box-shadow: -10px 0 15px 10px darkorange
-}
-/* End of box */
 
 /* Orange image */
 .Main{
@@ -175,8 +163,8 @@ footer{
 /* orange falling */
 .particle {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 50px;
+    height: 50px;
     pointer-events: none;
     animation: fallAndsparkle 1s ease-out forwards;
     z-index: 9999;
@@ -186,8 +174,8 @@ footer{
 .falling-orange {
     position: absolute;
     top: -50px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     pointer-events: none;
     animation: fallFromTop 3s linear forwards;
     z-index: 0;
@@ -212,15 +200,15 @@ footer{
 @keyframes fallAndsparkle {
     0% {
         opacity: 1;
-        transform: translate(0, 0) scale(1) rotate(0deg);
+        transform: translate(0, 0) scale(1);
     }
     50% {
         opacity: 0.8;
-        transform: translate(var(--dx), var(--dy)) scale(1.5) rotate(90deg);
+        transform: translate(var(--dx), var(--dy)) scale(1.5);
     }
     100% {
         opacity: 0;
-        transform: translate(var(--dx), var(--dy)) scale(0.5) rotate(180deg);
+        transform: translate(var(--dx), var(--dy)) scale(0.5);
         filter: blur(1px);
     }
 }
