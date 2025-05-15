@@ -23,23 +23,17 @@
         <button class="Main" onclick="increment()"
             id="particle-button";
         ></button>
-    </div>  
-
-    
-    <div class="box"></div>
-    
-    <div>
-        <button style="position: fixed; top: 10px; right: 10px" id="Extra" disabled onclick="multiplier()">Extra click - 10</button>
-        <button style="position: fixed; top: 50px; right: 10px" id="Auto" disabled onclick="AutoAdd()">Extra AutoClick - 50</button>
-        <button style="position: fixed; top: 90px; right: 10px" id="Speed" disabled onclick="HalfAuto()">half AutoClick speed - 100</button>
+    </div class="upgrade-container">  
+        <button id="Extra" disabled onclick="multiplier()">Extra click - 10</button>
+        <button id="Auto" disabled onclick="AutoAdd()">Extra AutoClick - 50</button>
+        <button id="Speed" disabled onclick="HalfAuto()">half AutoClick speed - 100</button>
     </div>
     
-    <div class="Rebirth">
-        <div>
-            <h2 style="position: fixed; top: 150px; right: 10px"id="RebirthNum">Rebirth: 0 (0x mult)</h2>
-            <p style="position: fixed; top: 200px; right: 10px"id="RebirthCostDisplay">cost:2,000,000</p>
+    <div class="rebirth-panel">
+            <h2 id="RebirthNum">Rebirth: 0 (0x mult)</h2>
+            <p id="RebirthCostDisplay">cost:2,000,000</p>
         </div>
-        <button style="position: fixed; top: 250px; right: 10px" id="Rebirth" onclick="rebirthF()" disabled>Rebirth</button>
+        <button id="Rebirth" onclick="rebirthF()" disabled>Rebirth</button>
     </div>
   
     <footer>
@@ -280,7 +274,6 @@
                 setTimeout(() => particle.remove(), 1000);
         }
     });
-
     </script>
 
 </body>
