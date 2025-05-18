@@ -102,7 +102,7 @@
             if (vibrateToggle){    
                 navigator.vibrate(200);
             }
-            count+=autoMultiplier;
+            count+=autoMultiplier * (Rebirth + 1);
             updateDisplay()
             disabling()
             enabling()
@@ -303,7 +303,7 @@
             LoadData()
             intervalId=setInterval(tick,AutoSpeed)
         }
-        window.onload = start()
+        window.onload = start;
 
         const button = document.getElementById('particle-button');
 
