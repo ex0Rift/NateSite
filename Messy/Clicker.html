@@ -144,6 +144,7 @@
                 document.getElementById("Rebirth").disabled = true;
             }
         }
+           
         function enabling(){
             if (count>=ClickCost){
                 document.getElementById("Extra").disabled = false;
@@ -160,7 +161,9 @@
                 document.getElementById("Rebirth").disabled = false;
             }
             
+            
         }
+    
         function increment(){
             if (vibrateToggle){    
                 navigator.vibrate(200);
@@ -280,6 +283,15 @@
             setTimeout(() => img.remove(), 3000);
 
         }
+
+        document.querySelectorAll('#upgrade-amount-buttons button, #upgrade-multi-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('shake');
+                setTimeout(() => {
+                    button.classList.remove('shake');
+                }, 500);
+            });
+        });
         
         
         let value = localStorage.getItem('AutoCost')
