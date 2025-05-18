@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <div class="juice-fill"></div>
+    <div class="bubbles"></div>
 
     <a href="LandingPage.html">
         <button class="MainButton" onclick="saveData()">Home</button>
@@ -120,6 +122,12 @@
             document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             document.getElementById("MultiUpgradeCostDisplay").textContent = "Click Upgrade x1 Cost: " + ClickCost;
             document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
+
+            const juiceFill = document.querySelector('.juice-fill');
+            if(juiceFill) {
+                let fillPercent = Math.min((count / RebirthCost) * 100, 100);
+                juiceFill.style.height = fillPercent + '%';
+            }
 
             
             if (SpeedCost>=102400)
@@ -330,6 +338,15 @@
         }
     });
 
+        const container = document.querySelector('.bubbles');
+        for (let i = 0; i < 30; i++) {
+            const bubble = document.createElement('span');
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.width = bubble.style.height = Math.random() * 20 + 10 + 'px';
+            bubble.style.animationDuration = Math.random() * 10 + 5 + 's';
+            container.appendChild(bubble);
+        }
+
         function buyClickUpgrade(amount) {
             if (amount === 'max') {
                 let levels = 0;
@@ -356,8 +373,9 @@
                     ClickCost += amount * 10;
                 }
             }
-            disabling();
             updateDisplay();
+            disabling();
+            
         }    
 
         function buyAutoUpgrade(amount) {   
@@ -386,8 +404,9 @@
                     AutoCost += amount * 50;
                 }
             }
-            disabling();
             updateDisplay();
+            disabling();
+            
             
         }
                  

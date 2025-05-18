@@ -8,11 +8,12 @@ html, body{
 /* Background */
 body{
     margin: 0;
+    padding: 50px;
     height: 100vh;
     text-align: center;
-    background: linear-gradient(-45deg, orange, white, orange);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     font-family: 'Quicksand', sans-serif;
     
@@ -29,24 +30,25 @@ body{
     height: auto;
     animation:Rotate 1.5s infinite linear ;
 }
+
 /* End of background */
 
 /* Text (1/5) */
 h1{
     padding: 10px;
-    color: black;
+    color: rgb(243, 109, 109);
 }
 
 p{
     margin-bottom: 40px;
-    color: black;
+    color: rgb(243, 109, 109);
 }
 /* End of text (1/5)
 
 
 /* Upgrade buttons */
 button{
-    background-color: orange;
+    background-color: rgb(243, 109, 109);
     color: black;
     border: none;
     padding: 5px 10px;
@@ -59,7 +61,8 @@ button{
 
 /* disable button */
 button:disabled{
-    background-color: lightgray;
+    background-color: black;
+    color: white;
 }
 /* End of disable button */
 
@@ -77,22 +80,64 @@ button:disabled{
     border-radius: 30px;
     transition: all 0.5s ease;
     margin-bottom: 30px;
-    color: white;
+    color: orange;
     cursor: pointer;
     position: relative;
     z-index: 1;
+
 }
 
 .Orange {
     position: fixed;
-    top:55%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 9999;
     pointer-events: auto;
-    margin:0;
-    bottom:auto;
+    margin: 0;
+    bottom: auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: transparent;
+    box-sizing: border-box; 
+
+    
 }
+
+.juice-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(180deg, rgba(235, 111, 2, 0.943), rgba(164, 88, 1, 0.983)),
+    url('../images/background.png');
+    border-radius: 0 0 30px 30px;
+    pointer-events: none;
+    transition: height 0.5s ease-out;
+    z-index: 0;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise infinite ease-in;
+}
+
+
+
 
 /* End of orange image */
 
@@ -108,29 +153,35 @@ button:disabled{
     position: fixed;
     top: 5px;
     left: 0;
-    background-color: orange;
+    background-color: rgb(248, 111, 111);
     color: black;
     border: none;
     padding: 15px 30px;
     font-size: 16px;
+    flex-grow: 0;
     border-radius: 20px;
     cursor: pointer;
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    box-shadow: 15px 0 0 darkorange;
     transition: all 0.9s ease;
     animation: shake 0.5s;
+
+    background-image: url("../images/wood-backing.png");
+    background-size: 365px 450px;
+    background-repeat: no-repeat;
+    padding: 15px;
 }
 
 .MainButton button:hover:enabled {
-    background-color: rgb(156, 92, 14);
+    background-color: black;
+    color: white;
 }
 /* Home and save button */
 
 /* smaller text (2/5) */
 h2{
-    color: black;
+    color: rgb(243, 109, 109);
     margin-bottom: 0;
 }
 /* End of smaller text (2/5) */
@@ -138,19 +189,27 @@ h2{
 /* rebirth button */
 .rebirth-panel {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    right: 0;
     padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 5px;
+    font-size: 20px;
+    color: rgb(241, 166, 166);
+
+    background-image: url("../images/wood-backing.png");
+    background-size: 400px 450px;
+    background-repeat: no-repeat;
+    
+    
 }
 .rebirth-panel h2,
 .rebirth-panel p {
     margin: 0;
-    color: black;
+    color: rgb(241, 166, 166);
 }
 .rebirth-panel button {
     height: auto;
@@ -160,12 +219,20 @@ h2{
 
 /* Upgrade Buttons */
 .upgrade-container {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    cursor: pointer
+    cursor: pointer;
+    background-image: url("../images/wood-backing.png");
+    background-size: 365px 450px;
+    background-repeat: no-repeat;
+    padding: 15px;
+
+    margin-left: 0;
+    align-self: flex-start;
+    left: 0;
 
 }
 
@@ -179,8 +246,8 @@ h2{
 
 #upgrade-amount-buttons button:hover:enabled,
 #upgrade-multi-buttons button:hover:enabled {
-    background-color: rgb(156, 92, 14);
-    color: white;
+    background-color: rgb(133, 51, 51);;
+    color: rgb(255, 224, 165);
 }
 
 #MultiUpgradeCosts button {
@@ -237,7 +304,7 @@ h2{
 }
 /* Footer */
 footer{
-    background-color: darkorange;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -247,7 +314,11 @@ footer{
     height: 50px;
     width: 100%;
     gap: 20px;
-    box-shadow: 0 0 15px darkorange;
+
+    background-image: url("../images/wood-backing.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
 }
 /* End of footer*/
 
@@ -280,6 +351,17 @@ footer{
 
 .shake {
     animation: shake 0.5s;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
 }
 
 @keyframes fallFromTop {
