@@ -81,6 +81,18 @@ button:disabled{
     position: relative;
     z-index: 1;
 }
+
+.Orange {
+    position: fixed;
+    top:55%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    pointer-events: auto;
+    margin:0;
+    bottom:auto;
+}
+
 /* End of orange image */
 
 /* Animation for orange */
@@ -141,29 +153,21 @@ h2{
 
 /* End of rebirth */
 
+/* Upgrade Buttons */
 .upgrade-container {
     position: relative;
-    justify-content: center;
-    height: auto;
-    padding: 6ox 12px;
-    font-size: 14px;
-    line-height: 1.2;
-    margin: 10px 0 30px 0;
-    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
+#upgrade-amount-buttons button,
 #upgrade-multi-buttons button {
-    margin: 4px;
-    padding: 6px 12px;
+    padding:8px 12px;
+    font-size: 14px;
+    flex-grow: 0;
     font-family: 'Quicksand', sans-serif;
-}
-
-#MultiUpgradeCosts {
-  position: relative;
-  margin: 0;
-  color: black;
-  font-weight: 200px;
-  z-index: 10;
 }
 
 #MultiUpgradeCosts button {
@@ -178,16 +182,46 @@ h2{
   transition: all 0.3s ease;
 }
 
-#click-upgrades {
-    margin: 10px 0;
-}
-
 #click-upgrades button {
-    margin: 4px;
+    margin:  0 4px;
     padding: 6px 12px;
 }
 
 
+#MultiUpgradeCosts p {
+    margin: 4px 0;
+}
+
+#Extra {
+    position: absolute;
+    background: none;
+    color: transparent;
+    top: 0;
+    right: 0;
+    z-index:0;
+}
+
+#Auto {
+    position: absolute;
+    background: none;
+    color: transparent;
+    top: 0;
+    right: 0;
+    z-index:0;
+
+}
+
+#speed {
+    align-self: flex-start;
+}
+
+#MultiUpgradeCostDisplay {
+    color: transparent;
+}
+
+#AutoClickCost {
+    color: transparent;
+}
 /* Footer */
 footer{
     background-color: darkorange;

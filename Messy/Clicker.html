@@ -15,42 +15,64 @@
         <button class="MainButton" onclick="saveData()">Home</button>
     </a>
 
+    
     <button style="top: 60px; padding-inline: 34px;"class="MainButton" onclick="saveData()">Save</button>
+    
 
     <h1 id="ClickCounter">Clicks:0</h1>
     <p id="Display">1x per click | 0x per 10s</p>
 
+   
+    <button id="Extra" onclick="multiplier()">Extra Click - 10</button>
+    <button id="Auto" onclick="AutoAdd()">Extra AutoClick - 50</button>
+
     <div class="upgrade-container">
+
     
         <div id="upgrade-multi-buttons">
-            <button onclick="buyClickUpgrade(1)">Upgrade x1</button>
-            <button onclick="buyClickUpgrade(10)">Upgrade x10</button>
-            <button onclick="buyClickUpgrade(100)">Upgrade x100</button>
-            <button onclick="buyClickUpgrade('max')">Upgrade Max</button>
+            <button onclick="buyClickUpgrade(1)">Click x1</button>
+            <button onclick="buyClickUpgrade(10)">Click x10</button>
+            <button onclick="buyClickUpgrade(100)">Click x100</button>
+            <button onclick="buyClickUpgrade('max')">Click Max</button>
+        </div>
+
+        <div id="upgrade-amount-buttons">
+            <button onclick="buyAutoUpgrade(1)">Auto x1</button>
+            <button onclick="buyAutoUpgrade(10)">Auto x10</button>
+            <button onclick="buyAutoUpgrade(100)">Auto x100</button>
+            <button onclick="buyAutoUpgrade('max')">Auto Max</button>
         </div>
 
         <div id="click-upgrade">
-            <button id="Extra" disabled onclick="multiplier()">Extra click</button>
-            <button id="Auto" disabled onclick="AutoAdd()">Extra AutoClick - 50</button>
             <button id="Speed" disabled onclick="HalfAuto()">half AutoClick speed - 100</button>
         </div>
-
-         <button class="Main" onclick="increment()" id="particle-button"></button>
     
         <div class="rebirth-panel">
                 <h2 id="RebirthNum">Rebirth: 0 (0x mult)</h2>
                 <p id="RebirthCostDisplay">cost:2,000,000</p>
-                <p id="MultiUpgradeCostDisplay">Click Upgrade x1 Cost: 10</p>
-                <div id="MultiUpgradeCosts">
+                <div id="MultiUpgradeCostsDisplay">
                     <h2>Multi-Upgrades</h2>
+                    <h2></h2>
+                    <h3>Click Upgrades</h3>
                     <p id="ClickCostX1">Click Upgrade x1 Cost: 10</p>
                     <p id="ClickCostX10">Click Upgrade x10 Cost: 100</p>
                     <p id="ClickCostX100">Click Upgrade x100 Cost: 1000</p>
-                    <p id="ClickCostMax">Click Upgrade Max Cost: 0</p>
+                    <h2></h2>
+                    <h3>AutoClick Upgrades</h3>
+                    <p id="AutoClickCostX1">AutoClick Upgrade x1 Cost: 50</p>
+                    <p id="AutoClickCostX10">AutoClick Upgrade x10 Cost: 500</p>
+                    <p id="AutoClickCostX100">AutoClick Upgrade x100 Cost: 5000</p>
+                    <p id="MultiUpgradeCostDisplay"></p>
+                    <p id="AutoClickCost"></p>
+
                 </div>
         </div>
             
         <button id="Rebirth" onclick="rebirthF()" disabled>Rebirth</button>
+    </div>
+
+    <div class="Orange">
+        <button class="Main" onclick="increment()" id="particle-button"></button>
     </div>
   
     <footer>
@@ -97,6 +119,7 @@
             document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth+" ("+(Rebirth+1)+"x mult)";
             document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             document.getElementById("MultiUpgradeCostDisplay").textContent = "Click Upgrade x1 Cost: " + ClickCost;
+            document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
 
             
             if (SpeedCost>=102400)
@@ -104,6 +127,7 @@
                 document.getElementById("Speed").textContent="MAX";
                 Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + "Infinite";
             }
+            updateUpgradeCosts()
         }
         
         function disabling(){
@@ -320,44 +344,79 @@
                     ClickCost += amount * 10;
                 }
             }
-            
             disabling();
             updateDisplay();
-            updateUpgradeCosts();
+        }    
+
+        function buyAutoUpgrade(amount) {   
+            if (amount === 'max') {
+                let levels = 0;
+                let totalCost = 0;
+                let tempCost = AutoCost;
+                while (count >= totalCost + tempCost) {
+                    totalCost += tempCost;
+                    levels++;
+                    tempCost += 50;
+                }
+                if (levels > 0) {
+                    count -= totalCost;
+                    autoMultiplier += levels;
+                    AutoCost += levels * 50;
+                }
+            } else {
+                let totalCost = 0;
+                for (let i=0; i <amount; i++) {
+                    totalCost += AutoCost + (i * 50)
+                }
+                if (count >= totalCost) {
+                    count -= totalCost;
+                    autoMultiplier += amount;
+                    AutoCost += amount * 50;
+                }
+            }
+            disabling();
+            updateDisplay();
             
         }
+                 
         function updateUpgradeCosts() {
-            let baseCost = ClickCost;
-            let increment = 10;
+            let clickBase = ClickCost;
+            let clickStep = 10;
 
-            let costX1 = baseCost;
-
-            let costX10 = 0;
+            let clickX1 = clickBase;
+            let clickX10 = 0;
             for (let i = 0; i < 10; i++) {
-                costX10 += baseCost + i * increment;
+                clickX10 += clickBase + i * clickStep;
             }
 
-            let costX100 = 0;
+            let clickX100 = 0;
             for (let i = 0; i < 100; i++) {
-                costX100 += baseCost + i * increment;
+                clickX100 += clickBase + i * clickStep;
+            }
+        
+
+            document.getElementById("ClickCostX1").textContent = `ClickUpgrade x1 Cost: ${clickX1.toLocaleString()}`;
+            document.getElementById("ClickCostX10").textContent = `ClickUpgrade x10 Cost: ${clickX10.toLocaleString()}`;
+            document.getElementById("ClickCostX100").textContent = `ClickUpgrade x100 Cost: ${clickX100.toLocaleString()}`;
+
+            let autoBase = AutoCost;
+            let autoStep = 50;
+
+            let autoX1 = autoBase;
+            let autoX10 = 0;
+            for (let i = 0; i < 10; i++) {
+                autoX10 += autoBase + i * autoStep;
+            }
+            let autoX100 = 0;
+            for (let i = 0; i < 100; i++) {
+                autoX100 += autoBase + i * autoStep;
             }
 
-            let totalCostMax = 0;
-            let tempCost = baseCost;
-            let tempCount = count;
-            while (tempCount >= tempCost) {
-                tempCount -= tempCost;
-                totalCostMax += tempCost;
-                tempCost += increment;
-            }
-
-            document.getElementById("ClickCostX1").textContent = `Click Upgrade x1 Cost: ${costX1.toLocaleString()}`;
-            document.getElementById("ClickCostX10").textContent = `Click Upgrade x10 Cost: ${costX10.toLocaleString()}`;            
-            document.getElementById("ClickCostX100").textContent = `Click Upgrade x100 Cost: ${costX100.toLocaleString()}`;
-            document.getElementById("totalCostXMax").textContent = `Click Upgrade xMax Cost: ${costXMax.toLocaleString()}`;
-
-
+            document.getElementById("AutoClickCostX1").textContent = `AutoClick Upgrade x1 Cost: ${autoX1.toLocaleString()}`;
+            document.getElementById("AutoClickCostX10").textContent = `AutoClick Upgrade x10 Cost: ${autoX10.toLocaleString()}`;
+            document.getElementById("AutoClickCostX100").textContent = `AutoClick Upgrade x100 Cost: ${autoX100.toLocaleString()}`;
         }
+        updateDisplay()
     </script>
 
 </body>
