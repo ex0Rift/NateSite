@@ -22,10 +22,10 @@
     
     <button style="top: 60px; padding-inline: 34px;"class="MainButton" onclick="saveData()">Save</button>
     
-
-    <h1 id="ClickCounter">Clicks:0</h1>
-    <p id="Display">1x per click | 0x per 10s</p>
-
+    <div id="clickDisplay">
+        <h1 id="ClickCounter">Clicks:0</h1>
+        <p id="Display">1x per click | 0x per 10s</p>
+    </div>
    
     <button id="Extra" onclick="multiplier()">Extra Click - 10</button>
     <button id="Auto" onclick="AutoAdd()">Extra AutoClick - 50</button>
@@ -58,14 +58,14 @@
                     <h2>Multi-Upgrades</h2>
                     <h2></h2>
                     <h3>Click Upgrades</h3>
-                    <p id="ClickCostX1">Click Upgrade x1 Cost: 10</p>
-                    <p id="ClickCostX10">Click Upgrade x10 Cost: 100</p>
-                    <p id="ClickCostX100">Click Upgrade x100 Cost: 1000</p>
+                    <p id="ClickCostX1">x1 Cost: 10</p>
+                    <p id="ClickCostX10">x10 Cost: 100</p>
+                    <p id="ClickCostX100">x100 Cost: 1000</p>
                     <h2></h2>
                     <h3>AutoClick Upgrades</h3>
-                    <p id="AutoClickCostX1">AutoClick Upgrade x1 Cost: 50</p>
-                    <p id="AutoClickCostX10">AutoClick Upgrade x10 Cost: 500</p>
-                    <p id="AutoClickCostX100">AutoClick Upgrade x100 Cost: 5000</p>
+                    <p id="AutoClickCostX1">x1 Cost: 50</p>
+                    <p id="AutoClickCostX10">x10 Cost: 500</p>
+                    <p id="AutoClickCostX100">x100 Cost: 5000</p>
                     <p id="MultiUpgradeCostDisplay"></p>
                     <p id="AutoClickCost"></p>
 
@@ -78,12 +78,13 @@
     <div class="Orange">
         <button class="Main" onclick="increment()" id="particle-button"></button>
     </div>
-  
+    
     <footer>
+        <div class="footer-overlay"></div>
+        <div class="footer-content"></div>
         <a href="#" onclick="ClearData()">Clear save</a>
         <a href="#" onclick="ToggleVibrate()">Toggle vibrations (andriod only)</a>
     </footer>
-
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1317864573611683"
             crossorigin="anonymous"></script>
@@ -298,7 +299,7 @@
 
         }
 
-        document.querySelectorAll('#upgrade-amount-buttons button, #upgrade-multi-buttons button').forEach(button => {
+        document.querySelectorAll('#upgrade-amount-buttons button, #upgrade-multi-buttons button, MainButton').forEach(button => {
             button.addEventListener('click', () => {
                 button.classList.add('shake');
                 setTimeout(() => {

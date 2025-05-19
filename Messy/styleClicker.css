@@ -36,13 +36,13 @@ body{
 /* Text (1/5) */
 h1{
     padding: 10px;
-    color: rgb(243, 109, 109);
+    color: rgb(137, 48, 238);
     z-index: 10;
 }
 
 p{
     margin-bottom: 40px;
-    color: rgb(243, 109, 109);
+    color: rgb(137, 48, 238);
     z-index: 10;
 }
 /* End of text (1/5)
@@ -50,7 +50,7 @@ p{
 
 /* Upgrade buttons */
 button{
-    background-color: rgb(243, 109, 109);
+    background-color: rgb(189, 110, 8);
     color: black;
     border: none;
     padding: 5px 10px;
@@ -59,11 +59,15 @@ button{
     font-family: 'Quicksand', sans-serif;
 }
 
+Button:hover:enabled {
+    color: rgb(255, 255, 255);  
+}
+
 /* End of Upgrade buttons */
 
 /* disable button */
 button:disabled{
-    background-color: black;
+    background-color: rgb(38, 36, 36);
     color: white;
 }
 /* End of disable button */
@@ -114,8 +118,8 @@ button:disabled{
     left: 0;
     width: 100%;
     height: 0%;
-    background: linear-gradient(180deg, rgba(235, 111, 2, 0.943), rgba(164, 88, 1, 0.983)),
-    url('../images/background.png');
+    background: linear-gradient(180deg, rgba(255, 151, 60, 0.943), rgba(144, 77, 1, 0.983)),
+    url("../images/background.png");
     border-radius: 0 0 30px 30px;
     pointer-events: none;
     transition: height 0.5s ease-out;
@@ -155,7 +159,7 @@ button:disabled{
     position: fixed;
     top: 5px;
     left: 0;
-    background-color: rgb(248, 111, 111);
+    background-color: rgb(189, 110, 8);
     color: black;
     border: none;
     padding: 15px 30px;
@@ -169,21 +173,19 @@ button:disabled{
     transition: all 0.9s ease;
     animation: shake 0.5s;
 
-    background-image: url("../images/wood-backing.png");
     background-size: 365px 450px;
     background-repeat: no-repeat;
     padding: 15px;
 }
 
-.MainButton button:hover:enabled {
-    background-color: black;
-    color: white;
+.MainButton:hover:enabled {
+    color: rgb(255, 255, 255);
 }
 /* Home and save button */
 
 /* smaller text (2/5) */
 h2{
-    color: rgb(243, 109, 109);
+    color: rgb(137, 48, 238);
     margin-bottom: 0;
 }
 /* End of smaller text (2/5) */
@@ -200,7 +202,7 @@ h2{
     align-items: flex-end;
     gap: 5px;
     font-size: 20px;
-    color: rgb(241, 166, 166);
+    color: rgb(245, 204, 158);
 
     background-image: url("../images/wood-backing.png");
     background-size: 400px 450px;
@@ -211,7 +213,7 @@ h2{
 .rebirth-panel h2,
 .rebirth-panel p {
     margin: 0;
-    color: rgb(241, 166, 166);
+    color: rgb(245, 204, 158);
 }
 .rebirth-panel button {
     height: auto;
@@ -248,7 +250,6 @@ h2{
 
 #upgrade-amount-buttons button:hover:enabled,
 #upgrade-multi-buttons button:hover:enabled {
-    background-color: rgb(133, 51, 51);;
     color: rgb(255, 255, 255);
 }
 
@@ -308,34 +309,42 @@ h2{
 #ClickCounter {
     position: relative;
     z-index: 9999;
-    color: rgb(241, 166, 166);
+    color: rgb(114, 99, 99);
 }
 
 #Display {
     position: relative;
     z-index: 9999;
-    color: rgb(241, 166, 166);
+    color: rgb(114, 99, 99);
 }
 /* Footer */
 footer{
 
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 50px;
+    height: 30px;
     width: 100%;
     gap: 20px;
-    z-index: 9999;
+    z-index: 9998;
 
-    background-image: url("../images/wood-backing.png");
+    background: rgba(101, 48, 2, 0.4);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 15px;
+    overflow: hidden;
 }
+
+footer a {
+    color: rgb(255, 162, 0); 
+    margin: 0 10px;
+    text-decoration: none;
+}
+
 /* End of footer*/
 
 /* orange falling */
