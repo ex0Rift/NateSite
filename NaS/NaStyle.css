@@ -1,0 +1,53 @@
+
+body{
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.PlayArea{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-image: url(../images/grid.png);
+    background-size: 80vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80vh;
+    height: 80vh;
+}
+
+.Info{
+    font-size: 2vh;
+}
+
+button{
+    background-color: rgba(0, 0, 0, 0.0);
+    font-size: 26vh;
+    width: 25.5vh;
+    height: 25.5vh;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+a button{
+    background-color: darkgreen;
+    color: lightgreen;
+    position: fixed;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    top: 10px;
+    left: 10px;
+}
+
+a button:hover{
+    background-color: rgb(2, 36, 2);
+}
