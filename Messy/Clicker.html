@@ -196,6 +196,10 @@
             autoMultiplier = 0;
             AutoSpeed=10000;
             SpeedCost=100;
+
+            clearInterval(intervalId);
+            intervalId = setInterval(tick, AutoSpeed);
+
             updateDisplay()
             disabling()
             enabling()
