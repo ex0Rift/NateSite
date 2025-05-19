@@ -120,7 +120,7 @@
             document.getElementById("Extra").textContent="Extra Click - " + ClickCost;
             document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
-            document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth+" ("+(Rebirth+1)+"x mult)";
+            document.getElementById("RebirthNum").textContent="Rebirth: "+Rebirth+" ("+(Rebirth+1)+"x multi)";
             document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             document.getElementById("MultiUpgradeCostDisplay").textContent = "Click Upgrade x1 Cost: " + ClickCost;
             document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
@@ -287,7 +287,7 @@
 
         function spawnFallingImage() {
             const img = document.createElement('img');
-            img.src = '../images/glassorange.png'; 
+            img.src = '../images/orange drop.png'; 
             img.className = 'falling-orange';
 
             img.style.left = Math.random() * window.innerWidth + 'px';
@@ -327,7 +327,7 @@
 
             for (let i = 0; i < 3; i++) {
                 const particle = document.createElement('img');
-                particle.src = "../images/light-orange.png"
+                particle.src = "../images/glassorange.png"
                 particle.className = 'particle';
 
                 const dx = (Math.random() - 0.5) * 100 + 'px';
