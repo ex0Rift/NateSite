@@ -309,13 +309,14 @@ h2{
 #ClickCounter {
     position: relative;
     z-index: 9999;
-    color: rgb(114, 99, 99);
+    color: rgb(245, 204, 158);
+    font-size: 100px;
 }
 
 #Display {
     position: relative;
     z-index: 9999;
-    color: rgb(114, 99, 99);
+    color: rgb(245, 204, 158);
 }
 /* Footer */
 footer{

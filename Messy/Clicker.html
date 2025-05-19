@@ -23,7 +23,7 @@
     <button style="top: 60px; padding-inline: 34px;"class="MainButton" onclick="saveData()">Save</button>
     
     <div id="clickDisplay">
-        <h1 id="ClickCounter">Clicks:0</h1>
+        <h1 id="ClickCounter">0</h1>
         <p id="Display">1x per click | 0x per 10s</p>
     </div>
    
@@ -117,7 +117,7 @@
             const ClickerCounter = document.getElementById("ClickCounter")
             const Display = document.getElementById("Display")
             Display.textContent = Increment + "x per click | " + autoMultiplier + "x per " + AutoSpeed/1000 + "s";
-            ClickerCounter.textContent="Clicks:"+count.toLocaleString();
+            ClickerCounter.textContent=count.toLocaleString();
             document.getElementById("Extra").textContent="Extra Click - " + ClickCost;
             document.getElementById("Auto").textContent="Extra AutoClick - " + AutoCost;
             document.getElementById("Speed").textContent="half AutoClick speed - " + SpeedCost;
