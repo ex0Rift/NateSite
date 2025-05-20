@@ -26,6 +26,7 @@ function WinCondition(){
         winner = "X";
     }
     document.getElementById("TurnText").textContent="THE WINNER IS " + winner;
+    
 
     buttons.forEach(button => {
         button.disabled=true;
