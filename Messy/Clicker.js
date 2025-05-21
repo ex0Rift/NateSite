@@ -1,7 +1,7 @@
 
 function AutoSpeedAbility(){
-    if (count>=5000000){
-        count-=5000000;
+    if (count>=25000000){
+        count-=25000000;
         document.getElementById("Ability-one").disabled=true;
         document.getElementById("Ability-one-pricetag").textContent="Owned";
         AbilityOne=1; 
@@ -21,6 +21,6 @@ function AbilityOneCheck(){
     }
     else{
         document.getElementById("Ability-one").disabled=false;
-        document.getElementById("Ability-one-pricetag").textContent="5,000,000";
+        document.getElementById("Ability-one-pricetag").textContent="25,000,000";
     }
 }
