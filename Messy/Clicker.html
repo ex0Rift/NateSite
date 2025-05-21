@@ -113,6 +113,8 @@
         
         var intervalId = setInterval(tick,AutoSpeed)
 
+
+        //Auto click and rebirth combatability 
         function tick(){
             if (vibrateToggle){    
                 navigator.vibrate(200);
@@ -122,7 +124,8 @@
             disabling()
             enabling()
         }
-        
+
+        //Update Display
         function updateDisplay(){
             const ClickerCounter = document.getElementById("ClickCounter")
             const Display = document.getElementById("Display")
@@ -137,6 +140,7 @@
             document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
             AbilityOneCheck();
 
+            //Juice Fill
             const juiceFill = document.querySelector('.juice-fill');
             if(juiceFill) {
                 let fillPercent = Math.min((count / RebirthCost) * 100, 100);
@@ -151,7 +155,7 @@
             }
             updateUpgradeCosts()
         }
-        
+        //Disabling And Enabling
         function disabling(){
             if (count<ClickCost){
                 document.getElementById("Extra").disabled = true;
@@ -185,7 +189,7 @@
             
             
         }
-    
+        //Rebirth and click Conmbatability
         function increment(){
             if (vibrateToggle){    
                 navigator.vibrate(200);
@@ -197,7 +201,7 @@
 
             spawnFallingImage();
         }
-
+        //Rebirth
         function rebirthF(){
             count=0;
             RebirthCost=RebirthCost*5;
@@ -216,7 +220,7 @@
             disabling()
             enabling()
         }
-
+        //Click cost increase
         function multiplier(){
             count -=ClickCost;
             Increment+=1;
@@ -225,7 +229,7 @@
             updateDisplay()
             disabling()
         }
-        
+        //Auto cost increase
         function AutoAdd(){
             count-=AutoCost;
             autoMultiplier+=1;
@@ -234,7 +238,7 @@
             updateDisplay()
             disabling()
         }
-        
+        //Auto speed cost increase
         function HalfAuto(){
             count-=SpeedCost;
             SpeedCost = SpeedCost*2;
@@ -246,6 +250,7 @@
             disabling()
         }
 
+        //Vibrations
         function ToggleVibrate(){vibrateToggle=!vibrateToggle}
 
         //Data handling
@@ -301,7 +306,7 @@
             localStorage.clear();
             updateDisplay()
         }
-
+        //Falling orange drops
         function spawnFallingImage() {
             const img = document.createElement('img');
             img.src = '../images/orange drop.png'; 
@@ -314,7 +319,7 @@
             setTimeout(() => img.remove(), 3000);
 
         }
-
+        //Button shakes
         document.querySelectorAll('#upgrade-amount-buttons button, #upgrade-multi-buttons button, MainButton').forEach(button => {
             button.addEventListener('click', () => {
                 button.classList.add('shake');
@@ -335,7 +340,7 @@
             intervalId=setInterval(tick,AutoSpeed)
         }
         window.onload = start;
-
+        //Particles on click (orange)
         const button = document.getElementById('particle-button');
 
         button.addEventListener('click', (e) => {
@@ -360,7 +365,7 @@
                 setTimeout(() => particle.remove(), 1000);
         }
     });
-
+        //Bubbles in the juice fill
         const container = document.querySelector('.bubbles');
         for (let i = 0; i < 30; i++) {
             const bubble = document.createElement('span');
@@ -369,7 +374,7 @@
             bubble.style.animationDuration = Math.random() * 10 + 5 + 's';
             container.appendChild(bubble);
         }
-
+        // UPGRADES 1X 10X 100X MAX
         function buyClickUpgrade(amount) {
             if (amount === 'max') {
                 let levels = 0;
