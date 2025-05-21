@@ -373,6 +373,48 @@ footer a {
 
 /* End or orange falling */
 
+/*Start of Ability*/
+
+.Ability-Contianer{
+    background-image: url("../images/wood-backing.png");
+    background-size: 300px;
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    padding-inline: 10px;
+    top: 410px;
+    left: 0;
+    padding-block: 10px;
+    width: 345px;
+    height: 80px;
+}
+
+.Ability-Contianer p{
+    color: rgb(245, 204, 158);
+}
+
+.Ability-Contianer button{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+}
+
+.Ability-Contianer button:hover{
+    animation: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.Ability-Contianer button:disabled{
+    background-color: orange;
+}
+
+.Auto-Max{
+    background-image: url(../images/auto-ability-icon.png);
+    background-size: 46px;
+    background-color: rgba(0,0,0,0.0);
+}
+
+/*End of Ability*/
 
 
 /* Animation */
