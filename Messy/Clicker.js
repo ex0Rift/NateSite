@@ -1,10 +1,14 @@
 
 function AutoSpeedAbility(){
-    if (count>=5000000){
-        count-=5000000;
+    if (count>=1){
+        count-=1;
         document.getElementById("Ability-one").disabled=true;
         document.getElementById("Ability-one-pricetag").textContent="Owned";
         AbilityOne=1; 
+        SpeedCost=102400;
+        AutoSpeed=0.000001;
+        clearInterval(intervalId);
+        intervalId = setInterval(tick, AutoSpeed);
         updateDisplay();
     }
 }
@@ -12,6 +16,7 @@ function AutoSpeedAbility(){
 function AbilityOneCheck(){
     if (AbilityOne==1){
         document.getElementById("Ability-one").disabled=true;
+        
         document.getElementById("Ability-one-pricetag").textContent="Owned";
     }
     else{
