@@ -1,7 +1,7 @@
 
 function AutoSpeedAbility(){
-    if (count>=1){
-        count-=1;
+    if (count>=5000000){
+        count-=5000000;
         document.getElementById("Ability-one").disabled=true;
         document.getElementById("Ability-one-pricetag").textContent="Owned";
         AbilityOne=1; 
