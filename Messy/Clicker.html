@@ -74,8 +74,8 @@
 
         <div class="Ability-Contianer">
             <div>
-                <button class="Auto-Max" title="Auto Speed buy- Maxes out autoclicker speed always for every rebirth"></button>
-                <p>5,000,000</p>
+                <button id="Ability-one" class="Auto-Max" onclick="AutoSpeedAbility()" title="Auto Speed buy- Maxes out autoclicker speed always for every rebirth"></button>
+                <p id="Ability-one-pricetag">5,000,000</p>
             </div>
         </div>
             
@@ -93,7 +93,7 @@
         <a href="#" onclick="ToggleVibrate()">Toggle vibrations (andriod only)</a>
     </footer>
 
-    <script async src="Clicker.js"></script>
+    
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1317864573611683"
             crossorigin="anonymous"></script>
@@ -107,6 +107,7 @@
         var SpeedCost=100;
         var RebirthCost=2000000;
         var Rebirth=0;
+        var AbilityOne = 0;
         
         var vibrateToggle = true;
         
@@ -134,6 +135,7 @@
             document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             document.getElementById("MultiUpgradeCostDisplay").textContent = "Click Upgrade x1 Cost: " + ClickCost;
             document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
+            AbilityOneCheck();
 
             const juiceFill = document.querySelector('.juice-fill');
             if(juiceFill) {
@@ -267,6 +269,7 @@
             localStorage.setItem('SpeedCost',SpeedCost);
             localStorage.setItem('RebirthCost',RebirthCost);
             localStorage.setItem('Rebirth',Rebirth);
+            localStorage.setItem('AbilityOne',AbilityOne);
         }
         function LoadData(){
             count = parseInt(localStorage.getItem('Count'));
@@ -278,6 +281,9 @@
             SpeedCost = parseInt(localStorage.getItem('SpeedCost'));
             RebirthCost = parseInt(localStorage.getItem('RebirthCost'));
             Rebirth = parseInt(localStorage.getItem('Rebirth'));
+            AbilityOne = parseInt(localStorage.getItem('AbilityOne')); 
+
+            
             updateDisplay()
         }
         
@@ -291,6 +297,7 @@
             SpeedCost=100;
             RebirthCost=2000000;
             Rebirth=0;
+            AbilityOne=0;
             localStorage.clear();
             updateDisplay()
         }
@@ -465,6 +472,9 @@
         }
         updateDisplay()
     </script>
+
+    <!--This script is loaded under the script tags to gain access to its variables-->
+    <script src="Clicker.js" defer></script>
 
 </body>
 </html>
