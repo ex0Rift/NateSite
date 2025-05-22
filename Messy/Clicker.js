@@ -1,7 +1,7 @@
 
 function AutoSpeedAbility(){
-    if (count>=25000000){
-        count-=25000000;
+    if (RebirthGems>=2){
+        RebirthGems-=2;
         document.getElementById("Ability-one").disabled=true;
         document.getElementById("Ability-one-pricetag").textContent="Owned";
         AbilityOne=1; 
@@ -15,8 +15,8 @@ function AutoSpeedAbility(){
 }
 
 function HalfCostOnclick(){
-    if (count>=50000000){
-        count-=50000000;
+    if (RebirthGems>=2){
+        RebirthGems-=2;
         document.getElementById("Ability-two").disabled=true;
         document.getElementById("Ability-two-pricetag").textContent="Owned";
         AbilityTwo=1;
@@ -37,7 +37,7 @@ function AbilityCheck(){
     }
     else{
         document.getElementById("Ability-one").disabled=false;
-        document.getElementById("Ability-one-pricetag").textContent="25,000,000";
+        document.getElementById("Ability-one-pricetag").textContent="2 Gems";
     }
     if (AbilityTwo==1){
         document.getElementById("Ability-two").disabled=true;
@@ -45,6 +45,6 @@ function AbilityCheck(){
     }
     else{
         document.getElementById("Ability-two").disabled=false;
-        document.getElementById("Ability-two-pricetag").textContent="50,000,000";
+        document.getElementById("Ability-two-pricetag").textContent="2 Gems";
     }
 }
