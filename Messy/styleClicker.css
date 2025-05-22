@@ -422,6 +422,25 @@ footer a {
 
 /*End of Ability*/
 
+/*Start of GemPannel*/
+
+.GemPannel{
+    background-color: red;
+    position: fixed;
+    width: 290px;
+    height: 50px;
+    right: 0;
+    top: 450px;
+    text-align: center;
+}
+
+.GemPannel h1{
+    color: rgb(245, 204, 158);
+    font-size: 20px;
+}
+
+/*End of GemPannel*/
+
 
 /* Animation */
 
