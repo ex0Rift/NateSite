@@ -397,6 +397,7 @@ footer a {
     width: 50px;
     height: 50px;
     margin-bottom: 0;
+    background-color: rgba(0,0,0,0.0);
 }
 
 .Ability-Contianer button:hover{
@@ -411,7 +412,12 @@ footer a {
 .Auto-Max{
     background-image: url(../images/auto-ability-icon.png);
     background-size: 46px;
-    background-color: rgba(0,0,0,0.0);
+}
+
+.Half-Price{
+    background-image: url(../images/abilityTwoIcon.png);
+    background-size: 46px;
+ 
 }
 
 /*End of Ability*/

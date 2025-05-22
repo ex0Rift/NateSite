@@ -24,3 +24,7 @@ function AbilityOneCheck(){
         document.getElementById("Ability-one-pricetag").textContent="25,000,000";
     }
 }
+
+function HalfCostOnclick(){
+    
+}

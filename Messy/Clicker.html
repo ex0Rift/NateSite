@@ -78,7 +78,8 @@
                 <p id="Ability-one-pricetag">25,000,000</p>
             </div>
             <div>
-                <button id="Ability-two" class="Half-Price"></button>
+                <button id="Ability-two" class="Half-Price" onclick="HalfCostOnclick" title="Half Price-All purchases cost is always halved"></button>
+                <p id="Ability-two-pricetag">50,000,000</p>
             </div>
         </div>
             
@@ -111,7 +112,7 @@
         var RebirthCost=2000000;
         var Rebirth=0;
         var AbilityOne = 0;
-        
+        var AbilityTwo = 0;        
         var vibrateToggle = true;
         
         var intervalId = setInterval(tick,AutoSpeed)
@@ -280,6 +281,7 @@
             localStorage.setItem('RebirthCost',RebirthCost);
             localStorage.setItem('Rebirth',Rebirth);
             localStorage.setItem('AbilityOne',AbilityOne);
+            localStorage.setItem('AbilityTwo',AbilityTwo);
         }
         function LoadData(){
             count = parseInt(localStorage.getItem('Count'));
@@ -292,6 +294,7 @@
             RebirthCost = parseInt(localStorage.getItem('RebirthCost'));
             Rebirth = parseInt(localStorage.getItem('Rebirth'));
             AbilityOne = parseInt(localStorage.getItem('AbilityOne')); 
+            AbilityTwo = parseInt(localStorage.getItem('AbilityTwo')); 
 
             
             updateDisplay()
