@@ -211,6 +211,13 @@ h2{
     height: auto;
 }
 
+.GemPannel {
+    background-image: url("../images/wood-backing.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
 /* End of rebirth */
 
 /* Upgrade Buttons */
@@ -330,7 +337,7 @@ footer{
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 30px;
+    height: 10px;
     width: 100%;
     gap: 20px;
     z-index: 9998;
