@@ -78,7 +78,7 @@
                 <p id="Ability-one-pricetag">25,000,000</p>
             </div>
             <div>
-                <button id="Ability-two" class="Half-Price" onclick="HalfCostOnclick" title="Half Price-All purchases cost is always halved"></button>
+                <button id="Ability-two" class="Half-Price" onclick="HalfCostOnclick()" title="Half Price-All purchases cost is always halved"></button>
                 <p id="Ability-two-pricetag">50,000,000</p>
             </div>
         </div>
@@ -142,7 +142,7 @@
             document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             document.getElementById("MultiUpgradeCostDisplay").textContent = "Click Upgrade x1 Cost: " + ClickCost;
             document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
-            AbilityOneCheck();
+            AbilityCheck();
 
             //Juice Fill
             const juiceFill = document.querySelector('.juice-fill');
@@ -220,6 +220,11 @@
                 SpeedCost=100;
                 clearInterval(intervalId);
                 intervalId = setInterval(tick, AutoSpeed);
+            }
+            //checks if you have ability two and applies rules if so
+            if (AbilityTwo==1){
+                ClickCost= Math.floor(ClickCost/2);
+                AutoCost = Math.floor(AutoCost/2);
             }
 
             updateDisplay()

@@ -9,22 +9,42 @@ function AutoSpeedAbility(){
         AutoSpeed=0.000001;
         clearInterval(intervalId);
         intervalId = setInterval(tick, AutoSpeed);
+
         updateDisplay();
     }
 }
-//calls this to ensure ability one is enabled and enables it
-function AbilityOneCheck(){
+
+function HalfCostOnclick(){
+    if (count>=5){
+        count-=5;
+        document.getElementById("Ability-two").disabled=true;
+        document.getElementById("Ability-two-pricetag").textContent="Owned";
+        AbilityTwo=1;
+
+        ClickCost= Math.floor(ClickCost/2);
+        AutoCost = Math.floor(AutoCost/2);
+
+        updateDisplay();
+    }
+}
+
+
+//calls this to ensure ability is enabled and enables it
+function AbilityCheck(){
     if (AbilityOne==1){
         document.getElementById("Ability-one").disabled=true;
-        
         document.getElementById("Ability-one-pricetag").textContent="Owned";
     }
     else{
         document.getElementById("Ability-one").disabled=false;
         document.getElementById("Ability-one-pricetag").textContent="25,000,000";
     }
-}
-
-function HalfCostOnclick(){
-    
+    if (AbilityTwo==1){
+        document.getElementById("Ability-two").disabled=true;
+        document.getElementById("Ability-two-pricetag").textContent="Owned";
+    }
+    else{
+        document.getElementById("Ability-two").disabled=false;
+        document.getElementById("Ability-two-pricetag").textContent="50,000,000";
+    }
 }
