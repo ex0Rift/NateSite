@@ -15,8 +15,8 @@ function AutoSpeedAbility(){
 }
 
 function HalfCostOnclick(){
-    if (count>=5){
-        count-=5;
+    if (count>=50000000){
+        count-=50000000;
         document.getElementById("Ability-two").disabled=true;
         document.getElementById("Ability-two-pricetag").textContent="Owned";
         AbilityTwo=1;
