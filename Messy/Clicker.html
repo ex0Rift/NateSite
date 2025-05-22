@@ -210,11 +210,13 @@
             ClickCost=10;
             AutoCost = 50;
             autoMultiplier = 0;
-            AutoSpeed=10000;
-            SpeedCost=100;
-
-            clearInterval(intervalId);
-            intervalId = setInterval(tick, AutoSpeed);
+            //checks if you have ability one
+            if (AbilityOne == 0){
+                AutoSpeed=10000;
+                SpeedCost=100;
+                clearInterval(intervalId);
+                intervalId = setInterval(tick, AutoSpeed);
+            }
 
             updateDisplay()
             disabling()
