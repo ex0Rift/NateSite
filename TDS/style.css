@@ -29,8 +29,8 @@
     height: 60px;
 
     position: fixed;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 15px;
 
 
 }
@@ -73,7 +73,17 @@
 
 /*-------Money-------*/
 .MoneyCount {
-    background-image: url('../images/Settings.webp');
+    background-image: url('../images/UI background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 /*---------------------------------- ID ----------------------------------*/
