@@ -211,6 +211,13 @@ h2{
     height: auto;
 }
 
+.GemPannel {
+    background-image: url("../images/wood-backing.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
 /* End of rebirth */
 
 /* Upgrade Buttons */
@@ -330,7 +337,7 @@ footer{
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 30px;
+    height: 10px;
     width: 100%;
     gap: 20px;
     z-index: 9998;
@@ -397,6 +404,7 @@ footer a {
     width: 50px;
     height: 50px;
     margin-bottom: 0;
+    background-color: rgba(0,0,0,0.0);
 }
 
 .Ability-Contianer button:hover{
@@ -411,10 +419,34 @@ footer a {
 .Auto-Max{
     background-image: url(../images/auto-ability-icon.png);
     background-size: 46px;
-    background-color: rgba(0,0,0,0.0);
+}
+
+.Half-Price{
+    background-image: url(../images/abilityTwoIcon.png);
+    background-size: 46px;
+ 
 }
 
 /*End of Ability*/
+
+/*Start of GemPannel*/
+
+.GemPannel{
+    background-color: red;
+    position: fixed;
+    width: 290px;
+    height: 50px;
+    right: 0;
+    top: 450px;
+    text-align: center;
+}
+
+.GemPannel h1{
+    color: rgb(245, 204, 158);
+    font-size: 20px;
+}
+
+/*End of GemPannel*/
 
 
 /* Animation */

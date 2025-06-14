@@ -68,14 +68,21 @@
                     <p id="AutoClickCostX100">x100 Cost: 5000</p>
                     <p id="MultiUpgradeCostDisplay"></p>
                     <p id="AutoClickCost"></p>
+                </div>
 
+                <div class="GemPannel">
+                    <h1 id="GemCountText">Rebirth Gems: 0</h1>
                 </div>
         </div>
 
         <div class="Ability-Contianer">
             <div>
                 <button id="Ability-one" class="Auto-Max" onclick="AutoSpeedAbility()" title="Auto Speed buy- Maxes out autoclicker speed always for every rebirth"></button>
-                <p id="Ability-one-pricetag">25,000,000</p>
+                <p id="Ability-one-pricetag">2 Gems</p>
+            </div>
+            <div>
+                <button id="Ability-two" class="Half-Price" onclick="HalfCostOnclick()" title="Half Price-All purchases cost is always halved"></button>
+                <p id="Ability-two-pricetag">2 Gems</p>
             </div>
         </div>
             
@@ -108,8 +115,9 @@
         var RebirthCost=2000000;
         var Rebirth=0;
         var AbilityOne = 0;
-        
+        var AbilityTwo = 0;        
         var vibrateToggle = true;
+        var RebirthGems = 0;
         
         var intervalId = setInterval(tick,AutoSpeed)
 
@@ -138,7 +146,8 @@
             document.getElementById("RebirthCostDisplay").textContent="Cost: "+RebirthCost.toLocaleString();
             document.getElementById("MultiUpgradeCostDisplay").textContent = "Click Upgrade x1 Cost: " + ClickCost;
             document.getElementById("AutoClickCost").textContent = "AutoClick Upgrade Cost: " + AutoCost;
-            AbilityOneCheck();
+            document.getElementById("GemCountText").textContent = "Rebirth Gems: "+RebirthGems;
+            AbilityCheck();
 
             //Juice Fill
             const juiceFill = document.querySelector('.juice-fill');
@@ -210,11 +219,19 @@
             ClickCost=10;
             AutoCost = 50;
             autoMultiplier = 0;
-            AutoSpeed=10000;
-            SpeedCost=100;
-
-            clearInterval(intervalId);
-            intervalId = setInterval(tick, AutoSpeed);
+            RebirthGems+=1;
+            //checks if you have ability one
+            if (AbilityOne == 0){
+                AutoSpeed=10000;
+                SpeedCost=100;
+                clearInterval(intervalId);
+                intervalId = setInterval(tick, AutoSpeed);
+            }
+            //checks if you have ability two and applies rules if so
+            if (AbilityTwo==1){
+                ClickCost= Math.floor(ClickCost/2);
+                AutoCost = Math.floor(AutoCost/2);
+            }
 
             updateDisplay()
             disabling()
@@ -275,6 +292,8 @@
             localStorage.setItem('RebirthCost',RebirthCost);
             localStorage.setItem('Rebirth',Rebirth);
             localStorage.setItem('AbilityOne',AbilityOne);
+            localStorage.setItem('AbilityTwo',AbilityTwo);
+            localStorage.setItem('RebirthGems',RebirthGems);
         }
         function LoadData(){
             count = parseInt(localStorage.getItem('Count'));
@@ -287,7 +306,8 @@
             RebirthCost = parseInt(localStorage.getItem('RebirthCost'));
             Rebirth = parseInt(localStorage.getItem('Rebirth'));
             AbilityOne = parseInt(localStorage.getItem('AbilityOne')); 
-
+            AbilityTwo = parseInt(localStorage.getItem('AbilityTwo')); 
+            RebirthGems = parseInt(localStorage.getItem('RebirthGems')) || 0;
             
             updateDisplay()
         }
@@ -303,6 +323,7 @@
             RebirthCost=2000000;
             Rebirth=0;
             AbilityOne=0;
+            RebirthGems=0;
             localStorage.clear();
             updateDisplay()
         }
