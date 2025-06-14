@@ -1,0 +1,41 @@
+
+body{
+    margin: 0;
+    background-image: url('../../images/mountains.jpg');
+    background-size: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+}
+
+.Parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-inline: 10vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    height: 100vh;
+}
+
+
+.Main{
+    background-color: #3b748d;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 50vw;
+    height: 300px;
+    
+}
+
+/*For vertical Screens*/
+@media(orientation:portrait){
+    .Main{
+        width: 90vw;
+    }
+
+    body{
+       background-size: cover;
+    }
+}
