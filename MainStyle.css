@@ -295,6 +295,10 @@ cardP{
     font-size: 3vh;
 }
 
+.nonobutton:hover{
+    background-color: #3C6E71;
+}
+
 /*applies when the screen height is more than width*/
 @media(orientation:portrait){
     body::-webkit-scrollbar{
