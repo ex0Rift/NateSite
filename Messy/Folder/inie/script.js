@@ -5,5 +5,5 @@ const num = localStorage.getItem("TempPassKey")
 //console.log(num)
 
 if (params.get("key") !== num){
-    window.location.href = "../../../error.html";
+    window.location.href = "../../../404.html";
 }
