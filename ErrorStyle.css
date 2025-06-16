@@ -1,0 +1,41 @@
+
+
+body{
+    background-color: gainsboro;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size:5vw;
+}
+
+h2{
+    color: gray;
+    font-size: 2vw;
+}
+
+button{
+    background-color: #3C6E71;
+    color: white;
+    font-size: 20px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+
+    border: none;
+    padding: 20px 20px;
+    border-radius: 30px;
+
+}
+
+.fourofourtext{
+    color: #3C6E71;
+}
