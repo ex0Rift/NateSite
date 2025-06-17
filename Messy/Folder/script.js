@@ -8,10 +8,14 @@ document.getElementById("INP").addEventListener("submit" , function (e){
     num = Math.random();
     localStorage.setItem("TempPassKey",num)
 
-    if (d$aa$d == "admin"){
-        if (a$dd$a == "Entry011008"){
-            window.location.href = "https://natesite.co.uk/Messy/Folder/inie/Ipage.html?key="+num;
-            //window.location.href = "http://127.0.0.1:5500/NateSite/Messy/Folder/inie/Ipage.html?key="+num;
+    fetch("https://my-backend-wy3i.onrender.com/auth/details")
+        .then(response => response.json())
+        .then(data => {
+            if (d$aa$d == data.user){
+                if (a$dd$a == data.password){
+                    window.location.href = "https://natesite.co.uk/Messy/Folder/inie/Ipage.html?key="+num;
+                    //window.location.href = "http://127.0.0.1:5500/Messy/Folder/inie/Ipage.html?key="+num;
         }
     }
+        });
 });
